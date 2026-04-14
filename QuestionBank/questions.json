@@ -1,0 +1,1802 @@
+[
+    {
+      "id": "q001",
+      "level": 1,
+      "week": 1,
+      "question": "What is the primary goal of Human-Computer Interaction (HCI)?",
+      "options": [
+        "Improve computer hardware",
+        "Make interaction effective, efficient, and satisfying",
+        "Reduce data usage",
+        "Teach programming"
+      ],
+      "correctAnswer": "Make interaction effective, efficient, and satisfying",
+      "explanation": "HCI focuses on the intersection of human behavior and technology to create systems that are usable, efficient, and pleasant for the user.",
+      "points": 10
+    },
+    {
+      "id": "q002",
+      "level": 1,
+      "week": 1,
+      "question": "Which example represents bad design?",
+      "options": [
+        "A door with a clear push/pull label",
+        "A TV remote with too many buttons",
+        "A phone with customizable themes",
+        "A book with a table of contents"
+      ],
+      "correctAnswer": "A TV remote with too many buttons",
+      "explanation": "Having too many buttons leads to cognitive overload and violates the principle of simplicity in design.",
+      "points": 10
+    },
+    {
+      "id": "q003",
+      "level": 1,
+      "week": 1,
+      "question": "Usability mainly describes:",
+      "options": [
+        "App color scheme",
+        "How easily users achieve their goals",
+        "Internet speed",
+        "Type of hardware"
+      ],
+      "correctAnswer": "How easily users achieve their goals",
+      "explanation": "Usability measures the effectiveness, efficiency, and satisfaction with which specified users achieve specified goals in a particular environment.",
+      "points": 10
+    },
+    {
+      "id": "q004",
+      "level": 1,
+      "week": 1,
+      "question": "Which of the following is an interactive system?",
+      "options": [
+        "Printed map",
+        "Digital ATM touch interface",
+        "Wall poster",
+        "Paper calendar"
+      ],
+      "correctAnswer": "Digital ATM touch interface",
+      "explanation": "An ATM involves two-way communication where the user inputs data and the system responds, making it an interactive system.",
+      "points": 10
+    },
+    {
+      "id": "q005",
+      "level": 1,
+      "week": 1,
+      "question": "Why is understanding user needs important in user-centered design?",
+      "options": [
+        "To reduce app cost",
+        "To match designs with real user behaviors",
+        "To create fancy animations",
+        "To increase marketing budget"
+      ],
+      "correctAnswer": "To match designs with real user behaviors",
+      "explanation": "User-centered design places the user at the core of the process, ensuring the final product effectively solves real problems and fits natural workflows.",
+      "points": 10
+    },
+    {
+      "id": "q006",
+      "level": 1,
+      "week": 1,
+      "question": "Why is a door without signifiers (push/pull marks) confusing?",
+      "options": [
+        "It has too much color",
+        "It uses expensive material",
+        "Its affordance and signifiers are unclear",
+        "It is automatic"
+      ],
+      "correctAnswer": "Its affordance and signifiers are unclear",
+      "explanation": "Norman doors lack visual cues (signifiers) that tell the user how to operate them, causing user error despite the physical affordance of the handle.",
+      "points": 10
+    },
+    {
+      "id": "q007",
+      "level": 1,
+      "week": 1,
+      "question": "What makes a TV remote with many buttons a poor design example?",
+      "options": [
+        "It is heavy",
+        "Battery drains quickly",
+        "Cognitive overload and poor usability",
+        "It is not colorful"
+      ],
+      "correctAnswer": "Cognitive overload and poor usability",
+      "explanation": "Cluttered interfaces require users to process too much information at once, increasing cognitive load and decreasing usability.",
+      "points": 10
+    },
+    {
+      "id": "q008",
+      "level": 1,
+      "week": 1,
+      "question": "Which step in user-centered design involves understanding user challenges and context?",
+      "options": [
+        "Advertising",
+        "Deployment",
+        "User research",
+        "Coding"
+      ],
+      "correctAnswer": "User research",
+      "explanation": "User research (interviews, observations) is conducted early to empathize with the user and understand their environment and pain points.",
+      "points": 10
+    },
+    {
+      "id": "q009",
+      "level": 1,
+      "week": 1,
+      "question": "Which HCI principle was violated in the Boeing 737 MAX case?",
+      "options": [
+        "Too many UI colors",
+        "No touchscreen support",
+        "Lack of visibility and poor feedback for automation",
+        "Icons were too small"
+      ],
+      "correctAnswer": "Lack of visibility and poor feedback for automation",
+      "explanation": "The automated MCAS system operated in the background without adequately notifying the pilots or explaining its actions, leading to fatal user errors.",
+      "points": 10
+    },
+    {
+      "id": "q010",
+      "level": 1,
+      "week": 1,
+      "question": "Which concept explains why users make errors when controls do not match their mental model?",
+      "options": [
+        "Animation design",
+        "Aesthetic layout",
+        "Mental models and signifiers",
+        "Download speed"
+      ],
+      "correctAnswer": "Mental models and signifiers",
+      "explanation": "When a system behaves differently than how a user expects it to (their mental model), it leads to confusion and operational errors.",
+      "points": 10
+    },
+    {
+      "id": "q011",
+      "level": 1,
+      "week": 2,
+      "question": "According to Henry Dreyfuss's idea of design, when does a designer succeed?",
+      "options": [
+        "When the product uses the latest technology",
+        "When users feel comfortable and can use the product without friction",
+        "When the product is inexpensive",
+        "When the product looks stylish"
+      ],
+      "correctAnswer": "When users feel comfortable and can use the product without friction",
+      "explanation": "Henry Dreyfuss championed designing for people, emphasizing that the measure of success is when the point of contact between the product and the person causes no friction.",
+      "points": 10
+    },
+    {
+      "id": "q012",
+      "level": 1,
+      "week": 2,
+      "question": "What was a major reason for the commercial failure of Google Glass?",
+      "options": [
+        "No camera support",
+        "Privacy concerns and awkward design",
+        "Low screen brightness",
+        "Lack of wireless connectivity"
+      ],
+      "correctAnswer": "Privacy concerns and awkward design",
+      "explanation": "Google Glass failed primarily due to societal pushback over privacy (recording without consent) and a design that felt socially awkward to wear.",
+      "points": 10
+    },
+    {
+      "id": "q013",
+      "level": 1,
+      "week": 2,
+      "question": "What is the first step in deciding what to design?",
+      "options": [
+        "Finalizing the brand logo",
+        "Identifying who the users are",
+        "Choosing color schemes",
+        "Deciding the marketing plan"
+      ],
+      "correctAnswer": "Identifying who the users are",
+      "explanation": "Design must always start with the user. Without knowing the target audience, you cannot identify their needs or tailor the solution.",
+      "points": 10
+    },
+    {
+      "id": "q014",
+      "level": 1,
+      "week": 2,
+      "question": "What is the main goal of interaction design according to Sharp, Rogers, and Preece?",
+      "options": [
+        "Supporting communication and interaction in daily life",
+        "Reducing manufacturing costs",
+        "Increasing screen brightness",
+        "Designing for entertainment"
+      ],
+      "correctAnswer": "Supporting communication and interaction in daily life",
+      "explanation": "Interaction design aims to create interventions in often complex situations that support everyday human communication and interaction.",
+      "points": 10
+    },
+    {
+      "id": "q015",
+      "level": 1,
+      "week": 2,
+      "question": "Which of the following best represents User Experience (UX)?",
+      "options": [
+        "How users feel emotionally while using the product",
+        "The processor speed of a device",
+        "Only the visual layout",
+        "The number of features in an app"
+      ],
+      "correctAnswer": "How users feel emotionally while using the product",
+      "explanation": "UX encompasses all aspects of the end-user's interaction with the company, its services, and its products, heavily focusing on the emotional and psychological response.",
+      "points": 10
+    },
+    {
+      "id": "q016",
+      "level": 1,
+      "week": 2,
+      "question": "Why are multidisciplinary teams valuable in interaction design?",
+      "options": [
+        "They reduce the cost of development",
+        "They make meetings shorter",
+        "They generate diverse ideas and perspectives",
+        "They eliminate the need for user testing"
+      ],
+      "correctAnswer": "They generate diverse ideas and perspectives",
+      "explanation": "Combining psychology, engineering, design, and business perspectives ensures a holistic product that addresses usability from all angles.",
+      "points": 10
+    },
+    {
+      "id": "q017",
+      "level": 1,
+      "week": 2,
+      "question": "What is inclusivity in design?",
+      "options": [
+        "Making interfaces look colorful",
+        "Designing products for diverse user needs and backgrounds",
+        "Removing advanced features",
+        "Designing only for expert users"
+      ],
+      "correctAnswer": "Designing products for diverse user needs and backgrounds",
+      "explanation": "Inclusive design methodologies ensure that products are accessible and usable by as many people as possible, regardless of age, ability, or background.",
+      "points": 10
+    },
+    {
+      "id": "q018",
+      "level": 1,
+      "week": 2,
+      "question": "What is accessibility mainly focused on?",
+      "options": [
+        "Increasing entertainment content",
+        "Improving device speed",
+        "Making products usable by people with disabilities",
+        "Reducing UI animations"
+      ],
+      "correctAnswer": "Making products usable by people with disabilities",
+      "explanation": "Accessibility specifically addresses barriers that prevent interaction with, or access to, websites and tools by people with disabilities.",
+      "points": 10
+    },
+    {
+      "id": "q019",
+      "level": 1,
+      "week": 2,
+      "question": "Which design principle ensures that crucial functions are easy to locate?",
+      "options": [
+        "Memorability",
+        "Flexibility",
+        "Aesthetics",
+        "Visibility"
+      ],
+      "correctAnswer": "Visibility",
+      "explanation": "The principle of visibility dictates that the more visible functions are, the more likely users will know what to do next.",
+      "points": 10
+    },
+    {
+      "id": "q020",
+      "level": 1,
+      "week": 2,
+      "question": "What is affordance in design?",
+      "options": [
+        "The cost of the product",
+        "Visual cues that indicate how an element should be used",
+        "The brand reputation",
+        "The color contrast ratio"
+      ],
+      "correctAnswer": "Visual cues that indicate how an element should be used",
+      "explanation": "Affordance refers to the perceived and actual properties of a thing, primarily those fundamental properties that determine just how the thing could possibly be used.",
+      "points": 10
+    },
+    {
+      "id": "q021",
+      "level": 2,
+      "week": 3,
+      "question": "Which stage of Design Thinking focuses on understanding the user's needs and behaviors?",
+      "options": [
+        "Prototype",
+        "Empathize",
+        "Test",
+        "Implement"
+      ],
+      "correctAnswer": "Empathize",
+      "explanation": "The Empathize stage involves setting aside assumptions to gain real insight into users and their needs through observation and engagement.",
+      "points": 10
+    },
+    {
+      "id": "q022",
+      "level": 2,
+      "week": 3,
+      "question": "The Double Diamond design process was developed by:",
+      "options": [
+        "Apple",
+        "Nielsen Norman Group",
+        "UK Design Council",
+        "Microsoft Research"
+      ],
+      "correctAnswer": "UK Design Council",
+      "explanation": "The UK Design Council introduced the Double Diamond in 2004 as a clear, comprehensive, and visual description of the design process.",
+      "points": 10
+    },
+    {
+      "id": "q023",
+      "level": 2,
+      "week": 3,
+      "question": "Which of the following is not one of the six stages of Design Thinking?",
+      "options": [
+        "Define",
+        "Ideate",
+        "Evaluate",
+        "Empathize"
+      ],
+      "correctAnswer": "Evaluate",
+      "explanation": "The core stages are usually Empathize, Define, Ideate, Prototype, and Test. Evaluate is often a synonym for test, but not technically the standard named stage.",
+      "points": 10
+    },
+    {
+      "id": "q024",
+      "level": 2,
+      "week": 3,
+      "question": "In the Define stage, the key goal is to:",
+      "options": [
+        "Sketch wireframes",
+        "Frame the problem clearly",
+        "Conduct A/B testing",
+        "Create high-fidelity prototypes"
+      ],
+      "correctAnswer": "Frame the problem clearly",
+      "explanation": "The Define stage brings clarity and focus to the design space by synthesizing research into a meaningful and actionable problem statement.",
+      "points": 10
+    },
+    {
+      "id": "q025",
+      "level": 2,
+      "week": 3,
+      "question": "Activity-centered design primarily focuses on:",
+      "options": [
+        "User preferences",
+        "User emotions",
+        "Tasks and activities users perform",
+        "Visual layout aesthetics"
+      ],
+      "correctAnswer": "Tasks and activities users perform",
+      "explanation": "Unlike pure user-centered design, activity-centered design focuses on the workflows, tasks, and activities that need to be accomplished.",
+      "points": 10
+    },
+    {
+      "id": "q026",
+      "level": 2,
+      "week": 3,
+      "question": "Which of the following is not a key component of system design?",
+      "options": [
+        "Data Management",
+        "Interfaces",
+        "Memory recall",
+        "Architecture"
+      ],
+      "correctAnswer": "Memory recall",
+      "explanation": "Memory recall is a human cognitive function studied in HCI, whereas Data Management, Interfaces, and Architecture are technical components of system design.",
+      "points": 10
+    },
+    {
+      "id": "q027",
+      "level": 2,
+      "week": 3,
+      "question": "The Interaction Design Process emphasizes four basic activities. Which one of these is included?",
+      "options": [
+        "Monetization",
+        "Discovering requirements",
+        "Branding",
+        "Advertising"
+      ],
+      "correctAnswer": "Discovering requirements",
+      "explanation": "The four activities are: discovering requirements, designing alternatives, prototyping, and evaluating.",
+      "points": 10
+    },
+    {
+      "id": "q028",
+      "level": 2,
+      "week": 3,
+      "question": "Genius design relies heavily on:",
+      "options": [
+        "Extensive user testing",
+        "Designer intuition and expertise",
+        "Market surveys",
+        "Accessibility guidelines"
+      ],
+      "correctAnswer": "Designer intuition and expertise",
+      "explanation": "Genius design bypasses traditional user research and relies entirely on the experience, intuition, and skill of the designer to solve the problem.",
+      "points": 10
+    },
+    {
+      "id": "q029",
+      "level": 2,
+      "week": 3,
+      "question": "Which lifecycle model is based on rapid prototyping and iteration within 5 days?",
+      "options": [
+        "Research in the Wild",
+        "Waterfall Model",
+        "Google Design Sprints",
+        "Spiral Model"
+      ],
+      "correctAnswer": "Google Design Sprints",
+      "explanation": "Developed at Google Ventures, the Design Sprint is a time-constrained, five-phase process for answering critical business questions through design and prototyping.",
+      "points": 10
+    },
+    {
+      "id": "q030",
+      "level": 2,
+      "week": 3,
+      "question": "According to Week 3, user involvement is important because:",
+      "options": [
+        "It helps reduce the app size",
+        "Users can become stakeholders and contribute feedback",
+        "It speeds up coding",
+        "It avoids the need for iteration"
+      ],
+      "correctAnswer": "Users can become stakeholders and contribute feedback",
+      "explanation": "Involving users creates a sense of ownership and provides crucial early feedback, ensuring the design accurately solves the right problems.",
+      "points": 10
+    },
+    {
+      "id": "q031",
+      "level": 2,
+      "week": 4,
+      "question": "User perspectives in HCI help designers understand:",
+      "options": [
+        "Only the visual UI layout",
+        "How users perceive and interact with technology",
+        "How designers communicate with developers",
+        "Only system requirements"
+      ],
+      "correctAnswer": "How users perceive and interact with technology",
+      "explanation": "Viewing a system from the user's perspective ensures the design aligns with human psychology, perception, and natural interaction patterns.",
+      "points": 10
+    },
+    {
+      "id": "q032",
+      "level": 2,
+      "week": 4,
+      "question": "Which of the following is an example of accessibility consideration?",
+      "options": [
+        "Using bright colors only",
+        "Providing adjustable font sizes and dyslexia-friendly modes",
+        "Adding decorative animations",
+        "Increasing advertisements"
+      ],
+      "correctAnswer": "Providing adjustable font sizes and dyslexia-friendly modes",
+      "explanation": "Adjustable fonts and specific readability modes directly assist users with visual and cognitive impairments, meeting accessibility standards.",
+      "points": 10
+    },
+    {
+      "id": "q033",
+      "level": 2,
+      "week": 4,
+      "question": "Novice users generally prefer:",
+      "options": [
+        "Only voice-based interfaces",
+        "Highly customizable and complex interfaces",
+        "Minimal guidance and advanced shortcuts",
+        "Simple interfaces with clear instructions"
+      ],
+      "correctAnswer": "Simple interfaces with clear instructions",
+      "explanation": "Novices lack a mental model of the system, so they rely on step-by-step instructions, constraints, and simple pathways to avoid errors.",
+      "points": 10
+    },
+    {
+      "id": "q034",
+      "level": 2,
+      "week": 4,
+      "question": "A persona is best described as:",
+      "options": [
+        "A real user hired by the company",
+        "A fictional, data-driven representation of a user",
+        "A system architecture model",
+        "A marketing campaign tool"
+      ],
+      "correctAnswer": "A fictional, data-driven representation of a user",
+      "explanation": "Personas are archetypical users created from qualitative and quantitative user research to guide design decisions and keep the team user-focused.",
+      "points": 10
+    },
+    {
+      "id": "q035",
+      "level": 2,
+      "week": 4,
+      "question": "Surveys in user research are useful because they:",
+      "options": [
+        "Always provide emotional depth",
+        "Allow quick collection of large-scale data",
+        "Guarantee unbiased answers",
+        "Replace interviews completely"
+      ],
+      "correctAnswer": "Allow quick collection of large-scale data",
+      "explanation": "Surveys are quantitative tools excellent for gathering statistical data across a wide user base quickly, though they lack the deep \"why\" of qualitative interviews.",
+      "points": 10
+    },
+    {
+      "id": "q036",
+      "level": 2,
+      "week": 4,
+      "question": "Empathy mapping categorizes insights into:",
+      "options": [
+        "Features, modules, layouts, workflows",
+        "Says, Thinks, Does, Feels",
+        "Inputs, outputs, processes, storage",
+        "Goals, sub-goals, errors, feedback"
+      ],
+      "correctAnswer": "Says, Thinks, Does, Feels",
+      "explanation": "Empathy maps are divided into four quadrants (Says, Thinks, Does, Feels) to help teams internalize the user's emotional and physical experience.",
+      "points": 10
+    },
+    {
+      "id": "q037",
+      "level": 2,
+      "week": 4,
+      "question": "A common challenge in user perspectives is:",
+      "options": [
+        "Too many designers",
+        "Conflicting needs among different user groups",
+        "Unlimited research time",
+        "Lack of design tools"
+      ],
+      "correctAnswer": "Conflicting needs among different user groups",
+      "explanation": "What benefits a novice user (simple, guided) often frustrates an expert user (needs speed, shortcuts), making balancing these needs a core design challenge.",
+      "points": 10
+    },
+    {
+      "id": "q038",
+      "level": 2,
+      "week": 4,
+      "question": "Affinity mapping is mainly used to:",
+      "options": [
+        "Assign tasks to team members",
+        "Organize qualitative data into themes",
+        "Remove unnecessary system features",
+        "Design UI wireframes"
+      ],
+      "correctAnswer": "Organize qualitative data into themes",
+      "explanation": "Affinity mapping groups scattered observations and research quotes into cohesive clusters to identify overarching themes and insights.",
+      "points": 10
+    },
+    {
+      "id": "q039",
+      "level": 2,
+      "week": 4,
+      "question": "A POV (Point of View) statement includes:",
+      "options": [
+        "System hardware requirements",
+        "User, need, and insight",
+        "UI color preferences",
+        "Coding-level issues"
+      ],
+      "correctAnswer": "User, need, and insight",
+      "explanation": "A POV statement synthesizes research into an actionable sentence: \"[User] needs to [User's Need] because [Surprising Insight]\".",
+      "points": 10
+    },
+    {
+      "id": "q040",
+      "level": 2,
+      "week": 4,
+      "question": "Data clustering helps in:",
+      "options": [
+        "Grouping users based on similar behaviors",
+        "Randomly distributing users",
+        "Increasing device performance",
+        "Removing prototypes"
+      ],
+      "correctAnswer": "Grouping users based on similar behaviors",
+      "explanation": "Clustering helps designers identify distinct user segments or interaction patterns, allowing for more targeted and personalized design solutions.",
+      "points": 10
+    },
+    {
+      "id": "q041",
+      "level": 3,
+      "week": 5,
+      "question": "Which of the following best describes a conceptual model?",
+      "options": [
+        "A detailed UI layout",
+        "A mental representation of how a system works",
+        "A list of system requirements",
+        "A coding guideline document"
+      ],
+      "correctAnswer": "A mental representation of how a system works",
+      "explanation": "A conceptual model is the high-level description of how a system is organized and operates, helping users understand what to do and how to do it.",
+      "points": 10
+    },
+    {
+      "id": "q042",
+      "level": 3,
+      "week": 5,
+      "question": "What is an example of an assumption in interface design?",
+      "options": [
+        "Testing a prototype with users",
+        "Taking something for granted without evidence",
+        "Mapping user journeys",
+        "Writing code before wireframes"
+      ],
+      "correctAnswer": "Taking something for granted without evidence",
+      "explanation": "An assumption is a belief that something is true (e.g., \"Users will know to click this icon\") without having validated it through user research.",
+      "points": 10
+    },
+    {
+      "id": "q043",
+      "level": 3,
+      "week": 5,
+      "question": "Which component is commonly used in online shopping conceptual models?",
+      "options": [
+        "Homepage wallpaper",
+        "Shopping cart",
+        "Video playback controls",
+        "Battery indicator"
+      ],
+      "correctAnswer": "Shopping cart",
+      "explanation": "The \"shopping cart\" leverages a real-world metaphor to help users understand the system for holding items before checkout.",
+      "points": 10
+    },
+    {
+      "id": "q044",
+      "level": 3,
+      "week": 5,
+      "question": "Interface metaphors help users by:",
+      "options": [
+        "Making systems slower",
+        "Increasing hardware complexity",
+        "Leveraging familiarity for learning new systems",
+        "Removing the need for feedback"
+      ],
+      "correctAnswer": "Leveraging familiarity for learning new systems",
+      "explanation": "By mapping digital concepts to physical real-world objects (like a desktop or a folder), users can immediately infer how the digital version should work.",
+      "points": 10
+    },
+    {
+      "id": "q045",
+      "level": 3,
+      "week": 5,
+      "question": "Which cognitive principle states that decision time increases with more choices?",
+      "options": [
+        "Miller's Law",
+        "Fitts's Law",
+        "Hick's Law",
+        "Gestalt Law of Proximity"
+      ],
+      "correctAnswer": "Hick's Law",
+      "explanation": "Hick's Law (or the Hick-Hyman Law) describes that the time it takes for a person to make a decision increases logarithmically as the number of choices increases.",
+      "points": 10
+    },
+    {
+      "id": "q046",
+      "level": 3,
+      "week": 5,
+      "question": "What is the purpose of a system image?",
+      "options": [
+        "To describe internal code structure",
+        "To show how the system actually works through the interface",
+        "To explain marketing strategy",
+        "To define business revenue"
+      ],
+      "correctAnswer": "To show how the system actually works through the interface",
+      "explanation": "The designer communicates with the user entirely via the system image (the physical UI, manuals, and behavior). If it's flawed, the user will form the wrong mental model.",
+      "points": 10
+    },
+    {
+      "id": "q047",
+      "level": 3,
+      "week": 5,
+      "question": "Which of the following is a drawback of interface metaphors?",
+      "options": [
+        "They always reduce cognitive load",
+        "They break all cultural norms",
+        "They may limit designers' creativity",
+        "They remove the need for conceptual models"
+      ],
+      "correctAnswer": "They may limit designers' creativity",
+      "explanation": "Relying too heavily on a metaphor can restrict the digital tool to the physical limitations of the object it mimics, stifling innovative features.",
+      "points": 10
+    },
+    {
+      "id": "q048",
+      "level": 3,
+      "week": 5,
+      "question": "Cognitive load increases when:",
+      "options": [
+        "Interfaces use familiar patterns",
+        "Users see excessive irrelevant information",
+        "Steps are minimized",
+        "Icons are consistent"
+      ],
+      "correctAnswer": "Users see excessive irrelevant information",
+      "explanation": "Extraneous cognitive load occurs when the interface presents unnecessary distractions, forcing the brain to process non-essential data.",
+      "points": 10
+    },
+    {
+      "id": "q049",
+      "level": 3,
+      "week": 5,
+      "question": "Which cognitive aspect focuses on how users perceive visual elements?",
+      "options": [
+        "Decision-making",
+        "Perception",
+        "Problem-solving",
+        "Reflective cognition"
+      ],
+      "correctAnswer": "Perception",
+      "explanation": "Perception involves how information is acquired from the environment via the senses, directly influencing how visual layouts, contrast, and spacing are designed.",
+      "points": 10
+    },
+    {
+      "id": "q050",
+      "level": 3,
+      "week": 5,
+      "question": "Which emerging trend in interfaces directly uses the human brain for input?",
+      "options": [
+        "AR overlays",
+        "Voice interaction",
+        "Brain-Computer Interfaces",
+        "Card-based UI"
+      ],
+      "correctAnswer": "Brain-Computer Interfaces",
+      "explanation": "Brain-Computer Interfaces (BCI) acquire brain signals, analyze them, and translate them into commands that are relayed to an output device.",
+      "points": 10
+    },
+    {
+      "id": "q051",
+      "level": 3,
+      "week": 6,
+      "question": "What is the primary purpose of identifying data requirements in HCI?",
+      "options": [
+        "To create marketing campaigns",
+        "To determine what information is needed to inform design decisions",
+        "To reduce memory usage in applications",
+        "To choose programming languages"
+      ],
+      "correctAnswer": "To determine what information is needed to inform design decisions",
+      "explanation": "Identifying data requirements early ensures that user research efforts capture the specific insights needed to guide and validate the interaction design process.",
+      "points": 10
+    },
+    {
+      "id": "q052",
+      "level": 3,
+      "week": 6,
+      "question": "Which type of data includes demographics and user preferences?",
+      "options": [
+        "System data",
+        "User data",
+        "Context data",
+        "Task data"
+      ],
+      "correctAnswer": "User data",
+      "explanation": "User data captures personal characteristics, preferences, skill levels, and demographic information that shape how different people will interact with a system.",
+      "points": 10
+    },
+    {
+      "id": "q053",
+      "level": 3,
+      "week": 6,
+      "question": "Which of the following is a qualitative data-gathering technique?",
+      "options": [
+        "Analytics logs",
+        "Surveys with multiple-choice questions",
+        "User interviews",
+        "System performance metrics"
+      ],
+      "correctAnswer": "User interviews",
+      "explanation": "Qualitative techniques, like user interviews, focus on gathering deep, descriptive insights about user behaviors, emotions, and motivations rather than numerical statistics.",
+      "points": 10
+    },
+    {
+      "id": "q054",
+      "level": 3,
+      "week": 6,
+      "question": "Crowdsourcing in HCI is mainly beneficial because:",
+      "options": [
+        "It reduces the need for user testing",
+        "It gathers data from diverse and large populations",
+        "It guarantees unbiased data automatically",
+        "It eliminates qualitative research"
+      ],
+      "correctAnswer": "It gathers data from diverse and large populations",
+      "explanation": "Crowdsourcing leverages a large, distributed group of people to gather vast amounts of data across different demographics quickly and efficiently.",
+      "points": 10
+    },
+    {
+      "id": "q055",
+      "level": 3,
+      "week": 6,
+      "question": "Fairness in data collection ensures that:",
+      "options": [
+        "All users are treated equitably in data and algorithms",
+        "The system runs faster",
+        "Participants cannot withdraw",
+        "Only expert users are included"
+      ],
+      "correctAnswer": "All users are treated equitably in data and algorithms",
+      "explanation": "Fairness is a core ethical principle to prevent bias, ensuring that datasets are representative and algorithms do not discriminate against specific user groups.",
+      "points": 10
+    },
+    {
+      "id": "q056",
+      "level": 3,
+      "week": 6,
+      "question": "Field studies involve:",
+      "options": [
+        "Observing users in controlled lab settings",
+        "Recording system logs only",
+        "Observing users in their natural environment",
+        "Removing outliers from datasets"
+      ],
+      "correctAnswer": "Observing users in their natural environment",
+      "explanation": "Field studies take the researcher out of the lab and into the user's actual context, capturing real-world workflows, interruptions, and environmental factors.",
+      "points": 10
+    },
+    {
+      "id": "q057",
+      "level": 3,
+      "week": 6,
+      "question": "Which tool is commonly used for real-time data handling?",
+      "options": [
+        "Tableau",
+        "Firebase",
+        "NVivo",
+        "SPSS"
+      ],
+      "correctAnswer": "Firebase",
+      "explanation": "Firebase provides a real-time database and backend-as-a-service, allowing applications to sync and handle live data across multiple clients instantly.",
+      "points": 10
+    },
+    {
+      "id": "q058",
+      "level": 3,
+      "week": 6,
+      "question": "Which of the following is a key issue in data ethics?",
+      "options": [
+        "Increasing app performance",
+        "User interface color selection",
+        "Transparency in how data is collected and used",
+        "Adding more user features"
+      ],
+      "correctAnswer": "Transparency in how data is collected and used",
+      "explanation": "Data ethics demands that users understand exactly what information is being gathered about them, why it is gathered, and how it will be utilized or shared.",
+      "points": 10
+    },
+    {
+      "id": "q059",
+      "level": 3,
+      "week": 6,
+      "question": "Inter-Annotator Agreement (IAA) is used to:",
+      "options": [
+        "Visualize data using graphs",
+        "Measure consistency among multiple annotators",
+        "Improve system performance",
+        "Replace manual labeling"
+      ],
+      "correctAnswer": "Measure consistency among multiple annotators",
+      "explanation": "IAA checks if different humans categorizing or labeling the same dataset are making the same decisions, which is crucial for data reliability.",
+      "points": 10
+    },
+    {
+      "id": "q060",
+      "level": 3,
+      "week": 6,
+      "question": "Which statistical method is used to find relationships between variables?",
+      "options": [
+        "Affinity mapping",
+        "Regression analysis",
+        "Unstructured interviewing",
+        "Card sorting"
+      ],
+      "correctAnswer": "Regression analysis",
+      "explanation": "Regression analysis is a quantitative statistical method used to determine the strength and character of the relationship between one dependent variable and a series of independent variables.",
+      "points": 10
+    },
+    {
+      "id": "q061",
+      "level": 4,
+      "week": 7,
+      "question": "What is a prototype in interaction design?",
+      "options": [
+        "A finalized product",
+        "A manifestation of a design that stakeholders can interact with",
+        "Only a software demo",
+        "A marketing document"
+      ],
+      "correctAnswer": "A manifestation of a design that stakeholders can interact with",
+      "explanation": "A prototype is an early sample or model built to test a concept or process, allowing designers and users to interact with ideas before full development.",
+      "points": 10
+    },
+    {
+      "id": "q062",
+      "level": 4,
+      "week": 7,
+      "question": "Which of the following is an example of Lo-Fi prototyping?",
+      "options": [
+        "Pixel-perfect UI",
+        "Paper sketches",
+        "Fully interactive app",
+        "High-resolution mockup"
+      ],
+      "correctAnswer": "Paper sketches",
+      "explanation": "Low-fidelity (Lo-Fi) prototypes are quick, cheap, and easily changeable representations like paper sketches, focusing on layout and flow rather than visual polish.",
+      "points": 10
+    },
+    {
+      "id": "q063",
+      "level": 4,
+      "week": 7,
+      "question": "Storyboards in prototyping help designers by:",
+      "options": [
+        "Writing code automatically",
+        "Breaking user tasks into scenes to visualize interaction",
+        "Generating analytics",
+        "Creating animations for UI"
+      ],
+      "correctAnswer": "Breaking user tasks into scenes to visualize interaction",
+      "explanation": "Originating from the film industry, storyboards visually map out the user's journey step-by-step, providing context for how a product fits into their life.",
+      "points": 10
+    },
+    {
+      "id": "q064",
+      "level": 4,
+      "week": 7,
+      "question": "Which prototyping type provides broad coverage with low detail?",
+      "options": [
+        "Vertical",
+        "Horizontal",
+        "Hi-Fi",
+        "Wizard-of-Oz"
+      ],
+      "correctAnswer": "Horizontal",
+      "explanation": "Horizontal prototyping shows the surface layer of an entire system (like a wide menu) but lacks deep functionality behind those top-level options.",
+      "points": 10
+    },
+    {
+      "id": "q065",
+      "level": 4,
+      "week": 7,
+      "question": "Mid-Fidelity prototypes typically include:",
+      "options": [
+        "Stick figures only",
+        "Grayscale wireframes with limited interactions",
+        "Pixel-perfect color UI",
+        "Final design animations"
+      ],
+      "correctAnswer": "Grayscale wireframes with limited interactions",
+      "explanation": "Mid-Fi prototypes step up from paper sketches using digital tools to create grayscale wireframes, allowing basic clickable navigation without distracting visual design.",
+      "points": 10
+    },
+    {
+      "id": "q066",
+      "level": 4,
+      "week": 7,
+      "question": "Smart UI refers to interfaces that:",
+      "options": [
+        "Are built only with code",
+        "Use AI to adapt to user behavior and context",
+        "Do not require user data",
+        "Never personalize content"
+      ],
+      "correctAnswer": "Use AI to adapt to user behavior and context",
+      "explanation": "Smart UIs utilize artificial intelligence to learn from user habits and contextual data, dynamically adjusting the interface to provide a better experience.",
+      "points": 10
+    },
+    {
+      "id": "q067",
+      "level": 4,
+      "week": 7,
+      "question": "Which is an advantage of Smart UI?",
+      "options": [
+        "Random interface behavior",
+        "Personalized and adaptive user experience",
+        "Increased manual effort for users",
+        "No support for accessibility"
+      ],
+      "correctAnswer": "Personalized and adaptive user experience",
+      "explanation": "By adapting to individual needs and patterns, Smart UIs reduce friction, save time, and deliver highly relevant content to each user.",
+      "points": 10
+    },
+    {
+      "id": "q068",
+      "level": 4,
+      "week": 7,
+      "question": "Wizard-of-Oz prototyping involves:",
+      "options": [
+        "A human simulating system responses behind the scenes",
+        "Full autonomous system",
+        "Physical hardware testing",
+        "Running A/B experiments"
+      ],
+      "correctAnswer": "A human simulating system responses behind the scenes",
+      "explanation": "In this method, the user believes they are interacting with an automated system, but a human researcher is actually pulling the strings and controlling responses.",
+      "points": 10
+    },
+    {
+      "id": "q069",
+      "level": 4,
+      "week": 7,
+      "question": "Vertical prototyping focuses on:",
+      "options": [
+        "A wide range of features with little detail",
+        "A detailed exploration of a single feature",
+        "Creating only animations",
+        "Testing final UI only"
+      ],
+      "correctAnswer": "A detailed exploration of a single feature",
+      "explanation": "Unlike horizontal prototyping, vertical prototyping drills deep into one specific function or subsystem to test its complete technical and interactive viability.",
+      "points": 10
+    },
+    {
+      "id": "q070",
+      "level": 4,
+      "week": 7,
+      "question": "Which tool is commonly used for mid or high-fidelity UI prototypes?",
+      "options": [
+        "Sticky notes",
+        "Figma",
+        "Lego blocks",
+        "Scenarios only"
+      ],
+      "correctAnswer": "Figma",
+      "explanation": "Figma is an industry-standard digital design tool used to create interactive, high-fidelity prototypes that closely mimic the final product.",
+      "points": 10
+    },
+    {
+      "id": "q071",
+      "level": 4,
+      "week": 8,
+      "question": "What is the main purpose of evaluation in HCI?",
+      "options": [
+        "To increase hardware performance",
+        "To assess usability, effectiveness, and user experience",
+        "To test marketing strategies",
+        "To reduce development cost"
+      ],
+      "correctAnswer": "To assess usability, effectiveness, and user experience",
+      "explanation": "Evaluation ensures that the designed system actually meets the user's needs, is easy to use, and provides a satisfying experience.",
+      "points": 10
+    },
+    {
+      "id": "q072",
+      "level": 4,
+      "week": 8,
+      "question": "Which type of evaluation occurs during the design process to refine the product?",
+      "options": [
+        "Summative",
+        "Diagnostic",
+        "Formative",
+        "Longitudinal"
+      ],
+      "correctAnswer": "Formative",
+      "explanation": "Formative evaluation is conducted iteratively during the development cycle to 'form' or shape the design by identifying and fixing issues early.",
+      "points": 10
+    },
+    {
+      "id": "q073",
+      "level": 4,
+      "week": 8,
+      "question": "Usability testing primarily involves:",
+      "options": [
+        "Experts reviewing code",
+        "Observing real users performing tasks",
+        "Only collecting analytics",
+        "Replacing prototypes with final UI"
+      ],
+      "correctAnswer": "Observing real users performing tasks",
+      "explanation": "The core of usability testing is having representative users attempt realistic tasks while researchers observe, listen, and record friction points.",
+      "points": 10
+    },
+    {
+      "id": "q074",
+      "level": 4,
+      "week": 8,
+      "question": "Which evaluation method requires evaluators to simulate user behavior step-by-step?",
+      "options": [
+        "Heuristic Evaluation",
+        "Cognitive Walkthrough",
+        "A/B Testing",
+        "Eye Tracking"
+      ],
+      "correctAnswer": "Cognitive Walkthrough",
+      "explanation": "In a cognitive walkthrough, evaluators walk through specific tasks step-by-step, asking at each point if the user will know what to do to achieve their goal.",
+      "points": 10
+    },
+    {
+      "id": "q075",
+      "level": 4,
+      "week": 8,
+      "question": "In experiment design, which approach assigns different groups to different conditions?",
+      "options": [
+        "Within-subjects",
+        "Mixed methods",
+        "Between-subjects",
+        "Triangulated testing"
+      ],
+      "correctAnswer": "Between-subjects",
+      "explanation": "A between-subjects (or independent measures) design uses a different group of participants for each condition to prevent carryover or learning effects.",
+      "points": 10
+    },
+    {
+      "id": "q076",
+      "level": 4,
+      "week": 8,
+      "question": "Which metric measures how fast users complete a task?",
+      "options": [
+        "Error severity",
+        "Task success rate",
+        "Time on task",
+        "Net Promoter Score"
+      ],
+      "correctAnswer": "Time on task",
+      "explanation": "Time on task is a quantitative usability metric that tracks efficiency by measuring exactly how long it takes a user to successfully complete a scenario.",
+      "points": 10
+    },
+    {
+      "id": "q077",
+      "level": 4,
+      "week": 8,
+      "question": "Eye tracking helps evaluators understand:",
+      "options": [
+        "System load time",
+        "Where users focus attention on the interface",
+        "User emotions only",
+        "The number of app downloads"
+      ],
+      "correctAnswer": "Where users focus attention on the interface",
+      "explanation": "Eye tracking technology reveals visual hierarchies, showing exactly where users look, how long they stare (fixations), and how their eyes move (saccades).",
+      "points": 10
+    },
+    {
+      "id": "q078",
+      "level": 4,
+      "week": 8,
+      "question": "Which principle ensures that participants voluntarily agree to evaluation?",
+      "options": [
+        "Counterbalancing",
+        "Informed consent",
+        "Aesthetic consistency",
+        "Reliability"
+      ],
+      "correctAnswer": "Informed consent",
+      "explanation": "Informed consent is a crucial ethical requirement where participants are fully educated about the test's purpose and risks before voluntarily agreeing to take part.",
+      "points": 10
+    },
+    {
+      "id": "q079",
+      "level": 4,
+      "week": 8,
+      "question": "Which evaluation method is cost-effective and identifies issues early using established principles?",
+      "options": [
+        "A/B Testing",
+        "Heuristic Evaluation",
+        "Biometric Metrics",
+        "Field Studies"
+      ],
+      "correctAnswer": "Heuristic Evaluation",
+      "explanation": "Heuristic evaluation relies on a small set of expert evaluators who judge an interface against established usability principles (heuristics), making it fast and cheap.",
+      "points": 10
+    },
+    {
+      "id": "q080",
+      "level": 4,
+      "week": 8,
+      "question": "Which predictive model estimates pointing time based on movement distance and target size?",
+      "options": [
+        "Hick's Law",
+        "Mental Model",
+        "Cognitive Load Theory",
+        "Fitts's Law"
+      ],
+      "correctAnswer": "Fitts's Law",
+      "explanation": "Fitts's Law mathematically predicts that the time required to rapidly move to a target area is a function of the ratio between the distance to the target and the width of the target.",
+      "points": 10
+    },
+    {
+      "id": "q081",
+      "level": 5,
+      "week": 9,
+      "question": "IoT refers to:",
+      "options": [
+        "A network of physical objects with sensors and connectivity",
+        "Devices that store only offline data",
+        "Tools without any automation",
+        "Only entertainment systems"
+      ],
+      "correctAnswer": "A network of physical objects with sensors and connectivity",
+      "explanation": "The Internet of Things (IoT) encompasses everyday physical objects embedded with sensors, software, and connectivity to exchange data over the internet.",
+      "points": 10
+    },
+    {
+      "id": "q082",
+      "level": 5,
+      "week": 9,
+      "question": "The main goal of IoT is:",
+      "options": [
+        "To increase device size",
+        "To \"connect the unconnected\"",
+        "To remove automation from homes",
+        "To limit wireless technology"
+      ],
+      "correctAnswer": "To \"connect the unconnected\"",
+      "explanation": "IoT aims to bring internet connectivity and smart capabilities to physical objects that traditionally lacked computational power.",
+      "points": 10
+    },
+    {
+      "id": "q083",
+      "level": 5,
+      "week": 9,
+      "question": "Which example shows HCI + IoT interaction?",
+      "options": [
+        "A robotic arm running without feedback",
+        "Users controlling smart bulbs via a mobile app",
+        "Devices interacting only through printed manuals",
+        "A non-digital clock"
+      ],
+      "correctAnswer": "Users controlling smart bulbs via a mobile app",
+      "explanation": "This demonstrates human-computer interaction (the app UI) actively controlling and receiving data from a connected physical IoT device (the smart bulb).",
+      "points": 10
+    },
+    {
+      "id": "q084",
+      "level": 5,
+      "week": 9,
+      "question": "Which interaction modalities are common in IoT?",
+      "options": [
+        "Voice, gesture, and touch",
+        "Only handwritten input",
+        "Only QR-code scanning",
+        "Only mechanical switches"
+      ],
+      "correctAnswer": "Voice, gesture, and touch",
+      "explanation": "Because IoT devices often lack traditional screens and keyboards, they rely on multimodal interactions like voice commands, touch panels, and spatial gestures.",
+      "points": 10
+    },
+    {
+      "id": "q085",
+      "level": 5,
+      "week": 9,
+      "question": "A major HCI challenge in IoT is:",
+      "options": [
+        "Increasing UI colors",
+        "Achieving consistent interaction across many devices",
+        "Ensuring devices always remain offline",
+        "Removing all system notifications"
+      ],
+      "correctAnswer": "Achieving consistent interaction across many devices",
+      "explanation": "With multiple smart devices from different manufacturers in one environment, creating a unified, predictable, and seamless user experience is a major design challenge.",
+      "points": 10
+    },
+    {
+      "id": "q086",
+      "level": 5,
+      "week": 9,
+      "question": "Why is HCI crucial in IoT systems?",
+      "options": [
+        "It hides system feedback",
+        "It ensures usability and intuitive interaction across devices",
+        "It prevents real-time interaction",
+        "It forces users to follow only one workflow"
+      ],
+      "correctAnswer": "It ensures usability and intuitive interaction across devices",
+      "explanation": "Without good HCI, complex interconnected systems become overwhelming. HCI focuses on making these invisible networks accessible and easy for humans to control.",
+      "points": 10
+    },
+    {
+      "id": "q087",
+      "level": 5,
+      "week": 9,
+      "question": "HaptiDrag creates friction using:",
+      "options": [
+        "Heated plates",
+        "Ultrasonic vibrations",
+        "Electroadhesion technology",
+        "Physical wheels"
+      ],
+      "correctAnswer": "Electroadhesion technology",
+      "explanation": "HaptiDrag utilizes electroadhesion to dynamically alter the surface friction, simulating the tactile feeling of dragging objects of varying weights and textures.",
+      "points": 10
+    },
+    {
+      "id": "q088",
+      "level": 5,
+      "week": 9,
+      "question": "HaptiDrag enhances VR by:",
+      "options": [
+        "Giving realistic tactile feedback with variable friction",
+        "Removing haptic sensations",
+        "Reducing VR stability",
+        "Removing all gestures"
+      ],
+      "correctAnswer": "Giving realistic tactile feedback with variable friction",
+      "explanation": "By varying friction, it allows VR users to actually 'feel' virtual resistance, bridging the gap between digital visuals and physical sensation.",
+      "points": 10
+    },
+    {
+      "id": "q089",
+      "level": 5,
+      "week": 9,
+      "question": "MobiTangibles supports VR tool training by:",
+      "options": [
+        "Tracking small tool movements using smartphone magnetometers",
+        "Using heat sensors only",
+        "Removing all sensors",
+        "Replacing tools with QR codes"
+      ],
+      "correctAnswer": "Tracking small tool movements using smartphone magnetometers",
+      "explanation": "MobiTangibles creatively uses the built-in magnetic sensors on a smartphone to track the manipulation of physical tools, aiding in VR training simulations.",
+      "points": 10
+    },
+    {
+      "id": "q090",
+      "level": 5,
+      "week": 9,
+      "question": "A limitation of MobiTangibles is:",
+      "options": [
+        "It cannot function on wooden surfaces",
+        "It may damage magnetic-sensitive objects like credit cards",
+        "It needs no smartphone",
+        "It cannot detect small magnets at close range"
+      ],
+      "correctAnswer": "It may damage magnetic-sensitive objects like credit cards",
+      "explanation": "Because the technology relies on strong permanent magnets to interact with the smartphone's magnetometer, there is an inherent risk to other magnetic-sensitive items nearby.",
+      "points": 10
+    },
+    {
+      "id": "q091",
+      "level": 5,
+      "week": 10,
+      "question": "LLMs are primarily designed to:",
+      "options": [
+        "Predict and generate language using large-scale training data",
+        "Render 3D animations",
+        "Compress multimedia files",
+        "Control robotic hardware"
+      ],
+      "correctAnswer": "Predict and generate language using large-scale training data",
+      "explanation": "Large Language Models operate fundamentally by analyzing vast amounts of text data to predict the next logical token or sequence of words in a conversation.",
+      "points": 10
+    },
+    {
+      "id": "q092",
+      "level": 5,
+      "week": 10,
+      "question": "Which of the following is an example of a multimodal input for an AI system?",
+      "options": [
+        "Only typed text",
+        "Text, image, or audio combined",
+        "A Wi-Fi password",
+        "A device serial number"
+      ],
+      "correctAnswer": "Text, image, or audio combined",
+      "explanation": "Multimodal AI systems can process and understand multiple types of input data simultaneously, combining text, visual, and auditory information.",
+      "points": 10
+    },
+    {
+      "id": "q093",
+      "level": 5,
+      "week": 10,
+      "question": "What is the function of prompting in LLM interactions?",
+      "options": [
+        "Debugging internal model weights",
+        "Giving the model instructions or context to perform a task",
+        "Measuring CPU temperature",
+        "Optimizing internet bandwidth"
+      ],
+      "correctAnswer": "Giving the model instructions or context to perform a task",
+      "explanation": "Prompting acts as the interface mechanism between the human and the AI, where specific language is used to steer the model toward desired outputs.",
+      "points": 10
+    },
+    {
+      "id": "q094",
+      "level": 5,
+      "week": 10,
+      "question": "Which is a key challenge in AI-based personalization?",
+      "options": [
+        "Limited screen brightness",
+        "Privacy concerns around user data",
+        "High-fidelity UI design",
+        "Lack of color contrast in icons"
+      ],
+      "correctAnswer": "Privacy concerns around user data",
+      "explanation": "To personalize effectively, AI requires massive amounts of behavioral and personal data, raising severe ethical concerns regarding consent, storage, and privacy.",
+      "points": 10
+    },
+    {
+      "id": "q095",
+      "level": 5,
+      "week": 10,
+      "question": "In behavior modeling, \"Effect\" refers to:",
+      "options": [
+        "The color of the UI",
+        "The user's actual response or action",
+        "The predicted CPU usage",
+        "The system's refresh rate"
+      ],
+      "correctAnswer": "The user's actual response or action",
+      "explanation": "When predicting interactions, the 'Effect' is the behavioral outcome or physical action the user takes in response to a stimulus or interface element.",
+      "points": 10
+    },
+    {
+      "id": "q096",
+      "level": 5,
+      "week": 10,
+      "question": "Zero-shot prompting allows the model to:",
+      "options": [
+        "Produce outputs without being given examples",
+        "Run without electricity",
+        "Access private user data",
+        "Train without GPUs"
+      ],
+      "correctAnswer": "Produce outputs without being given examples",
+      "explanation": "In zero-shot prompting, the model relies entirely on its pre-trained knowledge to perform a task without being provided any specific examples in the prompt itself.",
+      "points": 10
+    },
+    {
+      "id": "q097",
+      "level": 5,
+      "week": 10,
+      "question": "Which of these is a benefit of AI for accessibility?",
+      "options": [
+        "Faster firmware updates",
+        "Real-time speech-to-text for deaf users",
+        "Higher download speeds",
+        "Larger app icons"
+      ],
+      "correctAnswer": "Real-time speech-to-text for deaf users",
+      "explanation": "AI enhances accessibility by providing robust, on-the-fly translations of modalities, such as instantly converting spoken language into readable text.",
+      "points": 10
+    },
+    {
+      "id": "q098",
+      "level": 5,
+      "week": 10,
+      "question": "Behavior-optimized content refers to:",
+      "options": [
+        "Messages crafted to trigger specific user reactions",
+        "Code that compiles automatically",
+        "Images compressed for mobile phones",
+        "Deleted browsing history"
+      ],
+      "correctAnswer": "Messages crafted to trigger specific user reactions",
+      "explanation": "AI can generate behavior-optimized content that is algorithmically designed to maximize engagement, clicks, or specific emotional responses from the user.",
+      "points": 10
+    },
+    {
+      "id": "q099",
+      "level": 5,
+      "week": 10,
+      "question": "Ethical concerns with LLMs include:",
+      "options": [
+        "Keyboard layouts",
+        "Bias, manipulation risk, and misinformation",
+        "Slow Wi-Fi speed",
+        "File naming conventions"
+      ],
+      "correctAnswer": "Bias, manipulation risk, and misinformation",
+      "explanation": "Because they are trained on massive, unfiltered internet data, LLMs can confidently reproduce societal biases, hallucinate facts, or be used to generate deceptive content at scale.",
+      "points": 10
+    },
+    {
+      "id": "q100",
+      "level": 5,
+      "week": 10,
+      "question": "An MLLM (Multimodal Large Language Model) improves HCI by:",
+      "options": [
+        "Understanding and generating across multiple input/output formats",
+        "Replacing all user research",
+        "Removing the need for interfaces",
+        "Turning apps into offline-only tools"
+      ],
+      "correctAnswer": "Understanding and generating across multiple input/output formats",
+      "explanation": "MLLMs make interaction much more natural and human-like by allowing users to communicate via images, voice, and text simultaneously, rather than relying on strict UI constraints.",
+      "points": 10
+    },
+    {
+      "id": "q101",
+      "level": 6,
+      "week": 11,
+      "question": "Privacy in HCI refers to:",
+      "options": [
+        "Users' ability to control their personal data",
+        "Increasing app size",
+        "Removing encryption from messages",
+        "Designing only visual elements"
+      ],
+      "correctAnswer": "Users' ability to control their personal data",
+      "explanation": "Privacy in system design ensures that users have agency, transparency, and control over what personal information is collected, how it is used, and who can access it.",
+      "points": 10
+    },
+    {
+      "id": "q102",
+      "level": 6,
+      "week": 11,
+      "question": "Which of the following is an example of a security feature?",
+      "options": [
+        "Dark themes",
+        "Two-factor authentication (2FA)",
+        "Changing wallpapers",
+        "Offline advertisements"
+      ],
+      "correctAnswer": "Two-factor authentication (2FA)",
+      "explanation": "2FA adds an essential layer of security by requiring users to provide two different authentication factors to verify themselves, significantly reducing the risk of unauthorized access.",
+      "points": 10
+    },
+    {
+      "id": "q103",
+      "level": 6,
+      "week": 11,
+      "question": "Deepfakes are created using:",
+      "options": [
+        "Generative Adversarial Networks (GANs)",
+        "Spreadsheet formulas",
+        "Static HTML tags",
+        "Audio compression tools"
+      ],
+      "correctAnswer": "Generative Adversarial Networks (GANs)",
+      "explanation": "GANs consist of two neural networks—the generator and the discriminator—that contest with each other to produce highly realistic, synthetic media (deepfakes).",
+      "points": 10
+    },
+    {
+      "id": "q104",
+      "level": 6,
+      "week": 11,
+      "question": "Which type of harm involves AI generating biased or unfair outcomes?",
+      "options": [
+        "Bias and discrimination",
+        "Increased RAM usage",
+        "Reduced display brightness",
+        "Slow keyboard response"
+      ],
+      "correctAnswer": "Bias and discrimination",
+      "explanation": "Algorithmic bias occurs when an AI system reflects the implicit prejudices of its training data or its creators, leading to discriminatory outcomes for certain demographic groups.",
+      "points": 10
+    },
+    {
+      "id": "q105",
+      "level": 6,
+      "week": 11,
+      "question": "A real-world example of privacy by design is:",
+      "options": [
+        "WhatsApp's end-to-end encryption",
+        "Phone ringtones",
+        "Auto-rotate screen settings",
+        "File naming conventions"
+      ],
+      "correctAnswer": "WhatsApp's end-to-end encryption",
+      "explanation": "Privacy by Design means privacy is built into the core architecture of the system. End-to-end encryption ensures that even the service provider cannot read user messages.",
+      "points": 10
+    },
+    {
+      "id": "q106",
+      "level": 6,
+      "week": 11,
+      "question": "One major risk of deepfakes is:",
+      "options": [
+        "Creating propaganda or misinformation",
+        "Improving audio quality",
+        "Faster battery charging",
+        "Removing the need for passwords"
+      ],
+      "correctAnswer": "Creating propaganda or misinformation",
+      "explanation": "Because deepfakes are visually convincing, they can be weaponized to spread false narratives, manipulate elections, or damage reputations through fabricated evidence.",
+      "points": 10
+    },
+    {
+      "id": "q107",
+      "level": 6,
+      "week": 11,
+      "question": "Security in HCI focuses on:",
+      "options": [
+        "Protecting user data from unauthorized access",
+        "Increasing the number of UI animations",
+        "Designing only for children",
+        "Removing all login screens"
+      ],
+      "correctAnswer": "Protecting user data from unauthorized access",
+      "explanation": "Security design ensures that the interface facilitates safe interactions, preventing data breaches, identity theft, and unauthorized system modifications.",
+      "points": 10
+    },
+    {
+      "id": "q108",
+      "level": 6,
+      "week": 11,
+      "question": "GDPR impacts HCI design by requiring:",
+      "options": [
+        "Clear consent mechanisms and privacy transparency",
+        "More emojis in interfaces",
+        "Mandatory dark mode",
+        "Faster loading animations"
+      ],
+      "correctAnswer": "Clear consent mechanisms and privacy transparency",
+      "explanation": "The General Data Protection Regulation (GDPR) legally mandates that interfaces clearly ask for user consent to track data and allow users to easily withdraw that consent.",
+      "points": 10
+    },
+    {
+      "id": "q109",
+      "level": 6,
+      "week": 11,
+      "question": "Which tool supports secure authentication?",
+      "options": [
+        "Google Authenticator",
+        "Stopwatch app",
+        "Video filters",
+        "Calculator app"
+      ],
+      "correctAnswer": "Google Authenticator",
+      "explanation": "Google Authenticator generates time-based one-time passwords (TOTP), serving as a reliable second factor in a 2FA security setup.",
+      "points": 10
+    },
+    {
+      "id": "q110",
+      "level": 6,
+      "week": 11,
+      "question": "A major challenge in privacy & security design is:",
+      "options": [
+        "Balancing usability with strong protections",
+        "Removing all security features entirely",
+        "Hiding all system messages",
+        "Making interfaces more confusing"
+      ],
+      "correctAnswer": "Balancing usability with strong protections",
+      "explanation": "Highly secure systems often require complex passwords or frequent authentication, which creates friction. Designers must find the sweet spot where the system is both secure and user-friendly.",
+      "points": 10
+    },
+    {
+      "id": "q111",
+      "level": 6,
+      "week": 12,
+      "question": "Shannon's Level C focuses on:",
+      "options": [
+        "Whether the received meaning achieves the intended effect",
+        "Hardware choices",
+        "Signal compression",
+        "Gesture selection"
+      ],
+      "correctAnswer": "Whether the received meaning achieves the intended effect",
+      "explanation": "In Shannon-Weaver's communication theory, Level A is technical, Level B is semantic, and Level C is the effectiveness problem—whether the message caused the desired behavior or effect.",
+      "points": 10
+    },
+    {
+      "id": "q112",
+      "level": 6,
+      "week": 12,
+      "question": "In human communication, encoding means:",
+      "options": [
+        "Choosing fonts",
+        "Converting thoughts into words or symbols",
+        "Measuring noise levels",
+        "Compressing audio"
+      ],
+      "correctAnswer": "Converting thoughts into words or symbols",
+      "explanation": "Encoding is the process where a sender translates an internal thought, idea, or emotion into a communicable message, such as spoken words, written text, or gestures.",
+      "points": 10
+    },
+    {
+      "id": "q113",
+      "level": 6,
+      "week": 12,
+      "question": "A key feature of modern conversational AI is:",
+      "options": [
+        "Natural Language Understanding",
+        "Monochrome output",
+        "Manual rule-writing",
+        "Offline-only processing"
+      ],
+      "correctAnswer": "Natural Language Understanding",
+      "explanation": "Natural Language Understanding (NLU) allows AI to comprehend the intent, context, and sentiment behind human language, rather than just matching keywords.",
+      "points": 10
+    },
+    {
+      "id": "q114",
+      "level": 6,
+      "week": 12,
+      "question": "An example of a conversational AI assistant is:",
+      "options": [
+        "A calculator",
+        "A stapler",
+        "Google Assistant",
+        "A desk lamp"
+      ],
+      "correctAnswer": "Google Assistant",
+      "explanation": "Google Assistant utilizes advanced natural language processing to engage in two-way dialogue, answer queries, and perform tasks via conversational interaction.",
+      "points": 10
+    },
+    {
+      "id": "q115",
+      "level": 6,
+      "week": 12,
+      "question": "A communication barrier includes:",
+      "options": [
+        "Wallpapers",
+        "Volume changes",
+        "Extra brightness",
+        "Semantic misunderstandings"
+      ],
+      "correctAnswer": "Semantic misunderstandings",
+      "explanation": "A semantic barrier occurs when the sender and receiver have different interpretations of words or symbols, causing the intended message to be lost or misconstrued.",
+      "points": 10
+    },
+    {
+      "id": "q116",
+      "level": 6,
+      "week": 12,
+      "question": "AI conversational systems typically:",
+      "options": [
+        "Only record audio",
+        "Use NLP to interpret user messages",
+        "Require physical switches",
+        "Ignore user queries"
+      ],
+      "correctAnswer": "Use NLP to interpret user messages",
+      "explanation": "Conversational systems rely heavily on Natural Language Processing (NLP) to parse, analyze, and generate human language dynamically during an interaction.",
+      "points": 10
+    },
+    {
+      "id": "q117",
+      "level": 6,
+      "week": 12,
+      "question": "A challenge in deploying conversational AI is:",
+      "options": [
+        "Bias and misunderstanding nuanced input",
+        "Limited font choices",
+        "Keyboard shortcuts",
+        "Battery drainage"
+      ],
+      "correctAnswer": "Bias and misunderstanding nuanced input",
+      "explanation": "Human language is highly nuanced with slang, sarcasm, and cultural context. AI often struggles to grasp these subtleties, leading to misunderstandings or biased responses.",
+      "points": 10
+    },
+    {
+      "id": "q118",
+      "level": 6,
+      "week": 12,
+      "question": "Asimov's First Law states:",
+      "options": [
+        "Robots must obey all commands",
+        "Robots must protect themselves",
+        "Robots may not harm humans or allow harm",
+        "Robots must avoid emotions"
+      ],
+      "correctAnswer": "Robots may not harm humans or allow harm",
+      "explanation": "Isaac Asimov's First Law of Robotics is a foundational ethical concept in sci-fi and AI ethics: 'A robot may not injure a human being or, through inaction, allow a human being to come to harm.'",
+      "points": 10
+    },
+    {
+      "id": "q119",
+      "level": 6,
+      "week": 12,
+      "question": "Socially responsible MIAs aim to:",
+      "options": [
+        "Compress images",
+        "Promote fairness and inclusive interactions",
+        "Reduce accessibility",
+        "Avoid cultural sensitivity"
+      ],
+      "correctAnswer": "Promote fairness and inclusive interactions",
+      "explanation": "Socially responsible Machine Intelligent Agents (MIAs) are designed ethically to ensure they do not discriminate, and they provide accessible, equitable experiences for all users.",
+      "points": 10
+    },
+    {
+      "id": "q120",
+      "level": 6,
+      "week": 12,
+      "question": "A benefit of conversational AI in healthcare is:",
+      "options": [
+        "Changing screen colors",
+        "Increasing room volume",
+        "Printing receipts",
+        "Offering virtual guidance such as symptom checking"
+      ],
+      "correctAnswer": "Offering virtual guidance such as symptom checking",
+      "explanation": "Conversational AI can act as a triage tool, asking patients relevant medical questions, assessing symptoms, and directing them to the appropriate care level quickly.",
+      "points": 10
+    }
+]
