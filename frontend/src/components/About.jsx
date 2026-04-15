@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import devImage from '../assets/developer.jpg'
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
         {/* Left Side: Image */}
         <div className="flex-1 bg-black flex justify-center items-center overflow-hidden min-h-[300px] md:min-h-[400px] group">
           <img 
-            src="/src/assets/developer.jpg" 
+            src={devImage}   
             alt="Developer Photo" 
             onError={(e) => { e.target.src = 'https://via.placeholder.com/400x500/121212/f0c040?text=Subham' }}
             className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100"
