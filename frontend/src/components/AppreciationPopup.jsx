@@ -34,7 +34,7 @@ export default function AppreciationPopup({ onThankYou, onClose }) {
           </div>
 
           <p className="text-sm dark:text-zinc-300 light:text-zinc-600">
-            If it helped you, a small appreciation goes a long way for the developer 😊
+            If it helped you, a small appreciation goes a long way for the developer
           </p>
 
           {/* Thank You button */}
@@ -55,7 +55,7 @@ export default function AppreciationPopup({ onThankYou, onClose }) {
           {/* LinkedIn */}
           <div className="space-y-2">
             <p className="text-xs dark:text-zinc-400 light:text-zinc-500">
-              💼 Follow the developer on LinkedIn for more free tools like this
+              Follow the developer on LinkedIn for more free tools like this
             </p>
             <a
               href={LINKEDIN_URL}

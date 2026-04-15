@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useQuestions } from '../../context/QuestionsContext.jsx'
 import { useGame } from '../../context/GameContext.jsx'
 import CongratsPanel from '../CongratsPanel.jsx'
@@ -10,11 +10,12 @@ export default function PracticeScreen() {
   const { completePractice = () => localStorage.setItem('hci_practice_completed', 'true') } = useGame()
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [stagedOption, setStagedOption] = useState(null) // Added staging state
   const [selected, setSelected] = useState(null)
   const [showCongrats, setShowCongrats] = useState(false)
   const selectorRef = useRef(null)
 
-  // CRITICAL FIX: Added local storage state for practice attempts so the app doesn't crash
+  // Local storage state for practice attempts
   const [practiceAttempted, setPracticeAttempted] = useState(() => {
     try {
       const saved = localStorage.getItem('nptel_practice_attempted')
@@ -40,7 +41,7 @@ export default function PracticeScreen() {
   const correctCount = Object.values(practiceAttempted).filter(v => v === 'correct').length
   const allDone = questions.length > 0 && attemptedCount >= questions.length
 
-  // FIX 1: Added missing dependencies to the useEffect array
+  // Show congrats when all done
   useEffect(() => {
     if (allDone && !showCongrats) {
       completePractice()
@@ -56,16 +57,43 @@ export default function PracticeScreen() {
     }
   }, [currentIndex])
 
-  const handleSelect = (opt) => {
+  // Step 1: Stage the answer
+  const handleStage = useCallback((opt) => {
     if (attempt) return // Already answered — readonly
-    setSelected(opt)
-    const result = opt === currentQ.correctAnswer ? 'correct' : 'wrong'
+    setStagedOption(opt)
+  }, [attempt])
+
+  // Step 2: Lock the answer
+  const handleLock = useCallback(() => {
+    if (attempt || !stagedOption) return
+    setSelected(stagedOption)
+    const result = stagedOption === currentQ.correctAnswer ? 'correct' : 'wrong'
     markPracticeQuestion(currentQ.id, result)
-  }
+  }, [attempt, stagedOption, currentQ])
+
+  // Keyboard accessibility
+  useEffect(() => {
+    const handler = (e) => {
+      const map = { '1': 0, '2': 1, '3': 2, '4': 3 }
+      
+      // Stage with 1-4
+      if (map[e.key] !== undefined && currentQ && !attempt) {
+        handleStage(currentQ.options[map[e.key]])
+      }
+      
+      // Lock with Enter
+      if (e.key === 'Enter') {
+        if (!attempt && stagedOption) handleLock()
+      }
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [handleStage, handleLock, currentQ, attempt, stagedOption])
 
   const goTo = (index) => {
     setCurrentIndex(index)
     setSelected(null)
+    setStagedOption(null) // Clear staging when navigating
   }
 
   const goNext = () => { if (currentIndex < questions.length - 1) goTo(currentIndex + 1) }
@@ -75,6 +103,7 @@ export default function PracticeScreen() {
     setShowCongrats(false)
     setCurrentIndex(0)
     setSelected(null)
+    setStagedOption(null)
   }
 
   if (loading) return (
@@ -86,8 +115,6 @@ export default function PracticeScreen() {
   if (!currentQ) return null
 
   const alreadyAnswered = !!attempt
-  
-  // FIX 2: Removed the unused 'displaySelected' variable that was causing the ESLint warning
 
   return (
     <div className="space-y-4 animate-fade-in max-w-2xl mx-auto">
@@ -176,22 +203,32 @@ export default function PracticeScreen() {
       <div className="space-y-2">
         {currentQ.options.map((opt, i) => {
           let cls = ''
-          // Determine visual state
-          const answered = alreadyAnswered || !!selected
-          if (answered) {
-            if (opt === currentQ.correctAnswer) cls = 'correct'
-            else if (alreadyAnswered && attempt === 'wrong' && opt === '_no_match_') cls = 'wrong'
-            else if (selected === opt && opt !== currentQ.correctAnswer) cls = 'wrong'
-            else cls = 'disabled'
+          
+          if (!alreadyAnswered && !selected) {
+            // Highlight staged option
+            if (stagedOption === opt) {
+              cls = '!border-yellow-400 !bg-yellow-400/20 !text-yellow-600 dark:!text-yellow-400 scale-[1.01]'
+            }
+          } else {
+            // Feedback styling once answered
+            if (opt === currentQ.correctAnswer) {
+              cls = '!border-yellow-400 !bg-yellow-400/20 !text-yellow-600 dark:!text-yellow-400 scale-[1.01] font-bold'
+            } else if (selected === opt) {
+              // Highlight the specific wrong answer clicked during THIS session
+              cls = '!border-red-500 !bg-red-500/20 !text-red-600 dark:!text-red-400 font-bold'
+            } else {
+              cls = '!border-zinc-300 !bg-zinc-100 !text-zinc-400 dark:!border-zinc-800 dark:!bg-zinc-900 dark:!text-zinc-600 opacity-50'
+            }
           }
+
           return (
             <button
               key={i}
-              onClick={() => handleSelect(opt)}
-              disabled={answered}
+              onClick={() => handleStage(opt)}
+              disabled={alreadyAnswered || !!selected}
               className={`option-btn ${cls}`}
             >
-              <span className="font-display font-semibold text-xs mr-2 dark:text-zinc-500 light:text-zinc-400">
+              <span className="font-display font-semibold text-xs mr-2 opacity-50">
                 {i + 1}.
               </span>
               {opt}
@@ -199,6 +236,20 @@ export default function PracticeScreen() {
           )
         })}
       </div>
+
+      {/* Action Area: Lock Button */}
+      {!alreadyAnswered && !selected && (
+        <div className="pt-2 flex justify-end">
+          <button
+            onClick={handleLock}
+            disabled={!stagedOption}
+            className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            Lock Answer
+            <span className="hidden sm:inline text-xs opacity-50 font-normal ml-2">(Enter)</span>
+          </button>
+        </div>
+      )}
 
       {/* Explanation (shown after answering) */}
       {(selected || alreadyAnswered) && (
@@ -217,7 +268,7 @@ export default function PracticeScreen() {
       )}
 
       {/* Navigation buttons */}
-      <div className="flex gap-3 pb-6 pt-2">
+      <div className="flex gap-3 pb-6 pt-2 border-t dark:border-zinc-800 light:border-amber-200 mt-4">
         <button
           onClick={goPrev}
           disabled={currentIndex === 0}

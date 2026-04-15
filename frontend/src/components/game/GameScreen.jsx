@@ -5,6 +5,9 @@ import { useGame } from '../../context/GameContext.jsx'
 import { useTimer } from '../../hooks/useTimer.js'
 import CongratsPanel from '../CongratsPanel.jsx'
 
+// Import the error audio asset
+import errorMp3 from '../../assets/error.mp3'
+
 const HEARTS = 3
 const PASS_THRESHOLD = 0.75
 
@@ -32,11 +35,18 @@ export default function GameScreen() {
   const [hearts, setHearts] = useState(HEARTS)
   const [streak, setStreak] = useState(0)
   const [correct, setCorrect] = useState(0)
-  const [selected, setSelected] = useState(null)   // chosen option text
+  
+  // UX Improvements: Staged option (tapped) vs Selected option (locked)
+  const [stagedOption, setStagedOption] = useState(null)
+  const [selected, setSelected] = useState(null) 
+  
   const [phase, setPhase] = useState('question')   // 'question' | 'feedback' | 'gameover' | 'complete'
   const [shaking, setShaking] = useState(false)
   const [lastXP, setLastXP] = useState(null)
   const feedbackTimer = useRef(null)
+
+  // Audio Ref
+  const errorAudio = useRef(typeof Audio !== 'undefined' ? new Audio(errorMp3) : null)
 
   const currentQ = questions[qIndex]
   const total = questions.length
@@ -51,7 +61,14 @@ export default function GameScreen() {
     return a
   }
 
-  // FIX 1: Safely bypass the strict ESLint warnings to prevent infinite loops
+  // Play error sound helper
+  const playErrorSound = useCallback(() => {
+    if (errorAudio.current) {
+      errorAudio.current.currentTime = 0; // reset to start
+      errorAudio.current.play().catch(err => console.log('Audio play prevented by browser:', err));
+    }
+  }, [])
+
   // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
   useEffect(() => {
     if (!loading) {
@@ -60,112 +77,110 @@ export default function GameScreen() {
     }
   }, [level, loading])
 
-  const nextQuestion = useCallback(() => {
-    setSelected(null)
-    setPhase('question')
-    setLastXP(null)
-    setQIndex(i => i + 1)
-  }, [])
-
-  // FIX 2: Added nextQuestion to dependency array
+  // Timer expire handler
   const handleExpire = useCallback(() => {
     if (phase !== 'question') return
+    playErrorSound() // Play sound on timeout (counts as wrong)
+    setStagedOption(null)
     setSelected('__timeout__')
     setPhase('feedback')
     setShaking(true)
     setTimeout(() => setShaking(false), 500)
     setStreak(0)
-    setHearts(h => {
-      const next = h - 1
-      if (next <= 0) {
-        setTimeout(() => setPhase('gameover'), 1200)
-      } else {
-        feedbackTimer.current = setTimeout(nextQuestion, 2200)
-      }
-      return next
-    })
-  }, [phase, nextQuestion])
+    setHearts(h => h - 1)
+  }, [phase, playErrorSound])
 
   const { timeLeft, percentLeft, isUrgent, start, stop } = useTimer(30, handleExpire)
 
-  // FIX 3: Added 'start' to dependency array
+  // Start timer when question loads
   useEffect(() => {
     if (questions.length > 0 && phase === 'question') {
       start()
     }
-    return () => clearTimeout(feedbackTimer.current)
   }, [qIndex, questions, phase, start])
 
-  const handleSelect = useCallback((option) => {
-    if (phase !== 'question' || selected) return
-    stop()
-    setSelected(option)
+  // Step 1: Stage the answer (User clicks an option)
+  const handleStage = useCallback((option) => {
+    if (phase !== 'question') return
+    setStagedOption(option)
+  }, [phase])
+
+  // Step 2: Lock the answer (User clicks Lock Answer button)
+  const handleLock = useCallback(() => {
+    if (phase !== 'question' || !stagedOption) return
+    stop() // Stop timer only when locked
+    setSelected(stagedOption)
     setPhase('feedback')
 
-    const isCorrect = option === currentQ.correctAnswer
+    const isCorrect = stagedOption === currentQ.correctAnswer
     if (isCorrect) {
       const xp = calcXP(currentQ.points, streak + 1, timeLeft)
       setLastXP(xp)
       addXP(xp)
       setCorrect(c => c + 1)
       setStreak(s => s + 1)
-
-      // Next question or complete
-      const isLast = qIndex >= total - 1
-      if (isLast) {
-        feedbackTimer.current = setTimeout(() => {
-          const finalCorrect = correct + 1
-          const accuracy = finalCorrect / total
-          if (accuracy >= PASS_THRESHOLD) {
-            unlockLevel(Number(level) + 1)
-            if (Number(level) === 6) completeGame()
-          }
-          setPhase('complete')
-        }, 1800)
-      } else {
-        feedbackTimer.current = setTimeout(nextQuestion, 1800)
-      }
     } else {
+      playErrorSound() // Trigger error audio immediately upon locking wrong answer
       setShaking(true)
       setTimeout(() => setShaking(false), 500)
       setStreak(0)
-      setHearts(h => {
-        const next = h - 1
-        if (next <= 0) {
-          setTimeout(() => setPhase('gameover'), 1500)
-        } else {
-          const isLast = qIndex >= total - 1
-          if (isLast) {
-            feedbackTimer.current = setTimeout(() => setPhase('complete'), 1800)
-          } else {
-            feedbackTimer.current = setTimeout(nextQuestion, 1800)
-          }
-        }
-        return next
-      })
+      setHearts(h => h - 1)
     }
-  }, [phase, selected, currentQ, streak, timeLeft, qIndex, total, correct, addXP, unlockLevel, completeGame, level, stop, nextQuestion])
+  }, [phase, stagedOption, currentQ, streak, timeLeft, addXP, stop, playErrorSound])
 
-  // Keyboard shortcuts
+  // Step 3: Move to Next Question (User clicks Next)
+  const handleNext = useCallback(() => {
+    if (hearts <= 0) {
+      setPhase('gameover')
+      return
+    }
+
+    if (qIndex >= total - 1) {
+      const accuracy = correct / total
+      if (accuracy >= PASS_THRESHOLD) {
+        unlockLevel(Number(level) + 1)
+        if (Number(level) === 6) completeGame()
+      }
+      setPhase('complete')
+      return
+    }
+
+    // Reset for next question
+    setSelected(null)
+    setStagedOption(null)
+    setLastXP(null)
+    setPhase('question')
+    setQIndex(i => i + 1)
+  }, [hearts, qIndex, total, correct, level, unlockLevel, completeGame])
+
+  // Keyboard accessibility
   useEffect(() => {
     const handler = (e) => {
       const map = { '1': 0, '2': 1, '3': 2, '4': 3 }
-      if (map[e.key] !== undefined && currentQ) {
-        handleSelect(currentQ.options[map[e.key]])
+      
+      // Stage with 1-4
+      if (map[e.key] !== undefined && currentQ && phase === 'question') {
+        handleStage(currentQ.options[map[e.key]])
+      }
+      
+      // Lock or Next with Enter
+      if (e.key === 'Enter') {
+        if (phase === 'question' && stagedOption) handleLock()
+        else if (phase === 'feedback') handleNext()
       }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [handleSelect, currentQ])
+  }, [handleStage, handleLock, handleNext, currentQ, phase, stagedOption])
 
   const handleRestart = () => {
-    clearTimeout(feedbackTimer.current)
     const qs = shuffle(getByLevel(Number(level)))
     setQuestions(qs)
     setQIndex(0)
     setHearts(HEARTS)
     setStreak(0)
     setCorrect(0)
+    setStagedOption(null)
     setSelected(null)
     setPhase('question')
     setLastXP(null)
@@ -193,10 +208,10 @@ export default function GameScreen() {
           <div className="rounded-xl border p-4 space-y-2 text-left text-sm
             dark:bg-zinc-800 dark:border-zinc-700 light:bg-amber-50 light:border-amber-200">
             {[
-              ['✅ Correct', correct],
-              ['❌ Wrong', total - correct],
-              ['🎯 Accuracy', `${Math.round((correct/total)*100)}%`],
-              ['⚡ XP Earned', `${totalXP.toLocaleString()} total`],
+              ['Correct', correct],
+              ['Wrong', total - correct],
+              ['Accuracy', `${Math.round((correct/total)*100)}%`],
+              ['XP Earned', `${totalXP.toLocaleString()} total`],
             ].map(([l, v]) => (
               <div key={l} className="flex justify-between">
                 <span className="dark:text-zinc-400 light:text-zinc-500">{l}</span>
@@ -211,7 +226,7 @@ export default function GameScreen() {
           )}
           <div className="flex gap-2">
             <button onClick={handleRestart} className="btn-primary flex-1">
-              🔁 Retry
+              Retry
             </button>
             <button onClick={() => navigate('/game')} className="btn-ghost flex-1">
               Back to Levels
@@ -240,7 +255,7 @@ export default function GameScreen() {
   )
 
   return (
-    <div className="space-y-4 animate-fade-in max-w-2xl mx-auto">
+    <div className="space-y-4 animate-fade-in max-w-2xl mx-auto pb-10">
 
       {/* HUD — hearts, streak, XP, progress */}
       <div className="flex items-center justify-between gap-2 flex-wrap">
@@ -295,21 +310,33 @@ export default function GameScreen() {
 
       {/* Options */}
       <div className="space-y-2">
-        {currentQ.options.map((opt, i) => {
+      {currentQ.options.map((opt, i) => {
           let cls = ''
-          if (selected) {
-            if (opt === currentQ.correctAnswer) cls = 'correct'
-            else if (opt === selected && opt !== currentQ.correctAnswer) cls = 'wrong'
-            else cls = 'disabled'
+          
+          if (phase === 'question') {
+            // Apply a highlighted style if it's staged but not locked
+            if (stagedOption === opt) {
+              cls = '!border-yellow-400 !bg-yellow-400/20 !text-yellow-600 dark:!text-yellow-400 scale-[1.01]'
+            }
+          } else if (phase === 'feedback') {
+            // UX OVERRIDE: Correct is Yellow, Wrong is Red, Unselected is Faded Grey
+            if (opt === currentQ.correctAnswer) {
+              cls = '!border-yellow-400 !bg-yellow-400/20 !text-yellow-600 dark:!text-yellow-400 scale-[1.01] font-bold'
+            } else if (opt === selected && opt !== currentQ.correctAnswer) {
+              cls = '!border-red-500 !bg-red-500/20 !text-red-600 dark:!text-red-400 font-bold'
+            } else {
+              cls = '!border-zinc-300 !bg-zinc-100 !text-zinc-400 dark:!border-zinc-800 dark:!bg-zinc-900 dark:!text-zinc-600 opacity-50'
+            }
           }
+
           return (
             <button
               key={i}
-              onClick={() => handleSelect(opt)}
+              onClick={() => handleStage(opt)}
               className={`option-btn ${cls}`}
-              disabled={!!selected}
+              disabled={phase !== 'question'}
             >
-              <span className="font-display font-semibold text-xs mr-2 dark:text-zinc-500 light:text-zinc-400">
+              <span className="font-display font-semibold text-xs mr-2 opacity-50">
                 {i + 1}.
               </span>
               {opt}
@@ -318,9 +345,31 @@ export default function GameScreen() {
         })}
       </div>
 
+      {/* Action Area: Lock Button or Next Button */}
+      <div className="pt-2 flex justify-end">
+        {phase === 'question' ? (
+          <button
+            onClick={handleLock}
+            disabled={!stagedOption}
+            className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            🔒 Lock Answer
+            <span className="hidden sm:inline text-xs opacity-50 font-normal ml-2">(Enter)</span>
+          </button>
+        ) : (
+          <button
+            onClick={handleNext}
+            className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
+          >
+            {hearts <= 0 ? 'See Results' : (qIndex >= total - 1 ? 'Finish Level' : 'Next Question →')}
+            <span className="hidden sm:inline text-xs opacity-50 font-normal ml-2">(Enter)</span>
+          </button>
+        )}
+      </div>
+
       {/* XP earned flash */}
       {lastXP && (
-        <div className="flex justify-center animate-slide-up">
+        <div className="flex justify-center animate-slide-up pb-2">
           <span className="text-sm font-display font-bold text-gold
             bg-yellow-400/10 border border-yellow-400/20 px-4 py-2 rounded-full">
             +{lastXP} XP ⚡
@@ -342,12 +391,12 @@ export default function GameScreen() {
       )}
 
       {/* Back button */}
-      <div className="pb-4">
+      <div className="pb-4 pt-4 border-t dark:border-zinc-800 light:border-amber-200">
         <button
           onClick={() => navigate('/game')}
           className="text-xs dark:text-zinc-500 light:text-zinc-400 hover:text-gold transition-colors font-body"
         >
-          Back to Levels
+          ← Back to Levels
         </button>
       </div>
     </div>

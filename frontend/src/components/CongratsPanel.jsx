@@ -37,11 +37,11 @@ export default function CongratsPanel({ correct, total, mode, onPlayAgain }) {
           dark:bg-zinc-800 dark:border-zinc-700
           light:bg-amber-50 light:border-amber-200">
           {[
-            ['📊 Score', `${correct} / ${total}`],
-            ['🎯 Accuracy', `${accuracy}%`],
-            ['⚡ Total XP', `${totalXP.toLocaleString()} XP`],
-            ['✅ Correct', correct],
-            ['❌ Wrong', wrong],
+            ['Score', `${correct} / ${total}`],
+            ['Accuracy', `${accuracy}%`],
+            ['Total XP', `${totalXP.toLocaleString()} XP`],
+            ['Correct', correct],
+            ['Wrong', wrong],
           ].map(([label, val]) => (
             <div key={label} className="flex justify-between items-center text-sm">
               <span className="dark:text-zinc-400 light:text-zinc-500">{label}</span>
@@ -56,21 +56,21 @@ export default function CongratsPanel({ correct, total, mode, onPlayAgain }) {
         </p>
 
         <p className="font-display font-bold text-gold text-base">
-          All the very best for your HCI exam! 🚀
+        🎯 All the very best for your HCI exam! 
         </p>
 
         {/* Actions */}
         <div className="flex gap-3 pt-1">
           <button onClick={onPlayAgain} className="btn-primary flex-1">
-            🔁 {mode === 'game' ? 'Play Again' : 'Retry'}
+            {mode === 'game' ? 'Play Again' : 'Retry'}
           </button>
           {mode === 'game' ? (
             <button onClick={() => navigate('/practice')} className="btn-ghost flex-1">
-              📖 Practice
+              Practice
             </button>
           ) : (
             <button onClick={() => navigate('/game')} className="btn-ghost flex-1">
-              🎮 Game Mode
+              Game Mode
             </button>
           )}
         </div>

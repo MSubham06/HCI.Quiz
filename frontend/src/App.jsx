@@ -1,6 +1,9 @@
 import { useState, useEffect, useLayoutEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
+import Footer from './components/Footer.jsx'
+import About from './components/About.jsx'
+import QA from './components/practice/QA.jsx'
 import LevelSelect from './components/game/LevelSelect.jsx'
 import GameScreen from './components/game/GameScreen.jsx'
 import PracticeScreen from './components/practice/PracticeScreen.jsx'
@@ -51,9 +54,11 @@ export default function App() {
           <main className="flex-1 w-full max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
             <Routes>
               <Route path="/" element={<Navigate to="/game" replace />} />
+              <Route path="/qa" element={<QA />} />
               <Route path="/game" element={<LevelSelect />} />
               <Route path="/game/:level" element={<GameScreen />} />
               <Route path="/practice" element={<PracticeScreen />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </main>
 
@@ -63,6 +68,7 @@ export default function App() {
               onClose={handleClosePopup}
             />
           )}
+          <Footer />
         </div>
       </GameProvider>
     </QuestionsProvider>
