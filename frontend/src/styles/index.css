@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #f0c040;
+    --gold-dim: #b8860b;
+    --danger: #e05555;
+    --success: #4caf7d;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    @apply antialiased transition-colors duration-300;
+  }
+
+  /* Dark theme base */
+  html.dark body {
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+  }
+
+  /* Light theme base */
+  html.light body {
+    background-color: #f5f0e8;
+    color: #1a1a1a;
+  }
+}
+
+@layer components {
+  /* Scrollbar hide utility */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Gold text */
+  .text-gold { color: var(--gold); }
+  .dark .text-gold { color: #f0c040; }
+  .light .text-gold { color: #b8860b; }
+
+  /* Card base */
+  .card {
+    @apply rounded-2xl border transition-all duration-200;
+  }
+  html.dark .card {
+    @apply bg-zinc-900 border-zinc-800;
+  }
+  html.light .card {
+    @apply bg-white border-amber-100 shadow-sm;
+  }
+
+  /* Option button */
+  .option-btn {
+    @apply w-full text-left px-4 py-3 rounded-xl border-2 font-body
+           transition-all duration-150 min-h-[52px] text-sm sm:text-base
+           active:scale-[0.98] cursor-pointer;
+  }
+  html.dark .option-btn {
+    @apply bg-zinc-800 border-zinc-700 text-zinc-100
+           hover:border-yellow-400 hover:bg-zinc-700;
+  }
+  html.light .option-btn {
+    @apply bg-white border-amber-200 text-zinc-900
+           hover:border-yellow-600 hover:bg-amber-50;
+  }
+  .option-btn.correct {
+    @apply border-green-500 bg-green-500/10 text-green-400;
+  }
+  .option-btn.wrong {
+    @apply border-red-500 bg-red-500/10 text-red-400;
+  }
+  .option-btn.disabled {
+    @apply pointer-events-none opacity-60;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-display font-semibold text-sm
+           bg-yellow-400 text-zinc-900 hover:bg-yellow-300
+           active:scale-95 transition-all duration-150 min-h-[48px];
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply px-5 py-3 rounded-xl font-display font-semibold text-sm
+           border transition-all duration-150 min-h-[48px] active:scale-95;
+  }
+  html.dark .btn-ghost {
+    @apply border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-zinc-100;
+  }
+  html.light .btn-ghost {
+    @apply border-amber-300 text-zinc-700 hover:border-amber-500 hover:text-zinc-900;
+  }
+
+  /* Heart */
+  .heart { @apply text-xl select-none; }
+  .heart.lost { @apply opacity-20 grayscale; }
+
+  /* Streak badge */
+  .streak-badge {
+    @apply px-3 py-1 rounded-full text-xs font-display font-bold
+           bg-yellow-400/10 text-yellow-400 border border-yellow-400/30;
+  }
+  .streak-badge.fire {
+    @apply bg-orange-500/10 text-orange-400 border-orange-500/30;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4
+           bg-black/70 backdrop-blur-sm animate-fade-in;
+  }
+  .modal-box {
+    @apply w-full max-w-md rounded-2xl p-6 animate-slide-up
+           border shadow-2xl;
+  }
+  html.dark .modal-box {
+    @apply bg-zinc-900 border-zinc-700;
+  }
+  html.light .modal-box {
+    @apply bg-white border-amber-200;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Syne', sans-serif; }
+  .font-body { font-family: 'DM Sans', sans-serif; }
+
+  /* Timer bar animation */
+  .timer-bar {
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #f0c040, #e05555);
+    transition: width 1s linear;
+  }
+
+  /* Shake animation for wrong answer */
+  .shake { animation: shake 0.4s ease-in-out; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20%,60% { transform: translateX(-6px); }
+    40%,80% { transform: translateX(6px); }
+  }
+
+  /* Slide up */
+  .animate-slide-up { animation: slideUp 0.3s ease-out; }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Fade in */
+  .animate-fade-in { animation: fadeIn 0.25s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
