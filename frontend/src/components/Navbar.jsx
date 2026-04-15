@@ -41,13 +41,14 @@ export default function Navbar({ theme, toggleTheme }) {
           HCI <span className="text-gold">Quiz</span>
         </div>
         
-        <div className="flex items-center gap-3 sm:gap-5">
+        {/* Changed gap to 0 to pack icons completely together */}
+        <div className="flex items-center justify-end gap-0">
           
           {/* Mode Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-2 text-sm font-semibold transition-colors px-2 py-1 rounded-lg dark:text-zinc-100 light:text-zinc-900 hover:text-gold dark:hover:text-gold"
+              className="flex items-center gap-2 text-sm font-semibold transition-colors px-3 py-2 rounded-lg dark:text-zinc-100 light:text-zinc-900 hover:text-gold dark:hover:text-gold"
             >
               {getCurrentMode()} <FontAwesomeIcon icon={faChevronDown} className={`text-[10px] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -71,7 +72,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <Link 
             to="/about"
             title="About Developer"
-            className={`text-lg p-2 rounded-full transition-colors flex items-center justify-center ${location.pathname === '/about' ? 'text-gold bg-zinc-800/50' : 'dark:text-zinc-400 light:text-zinc-500 hover:bg-zinc-800/50 hover:text-gold'}`}
+            className={`w-10 h-10 rounded-full transition-colors flex items-center justify-center text-lg ${location.pathname === '/about' ? 'text-gold bg-zinc-800/50' : 'dark:text-zinc-400 light:text-zinc-500 hover:bg-zinc-800/50 hover:text-gold'}`}
           >
             <FontAwesomeIcon icon={faUserTie} />
           </Link>
@@ -80,13 +81,13 @@ export default function Navbar({ theme, toggleTheme }) {
           <button 
             onClick={() => setShowResetConfirm(true)}
             title="Reset All Data"
-            className="text-lg p-2 rounded-full flex items-center justify-center dark:text-zinc-400 light:text-zinc-500 hover:bg-red-500/10 hover:text-red-400 transition-colors"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-lg dark:text-zinc-400 light:text-zinc-500 hover:bg-red-500/10 hover:text-red-400 transition-colors"
           >
             <FontAwesomeIcon icon={faTrashCan} />
           </button>
           
           {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="text-lg p-2 flex items-center justify-center rounded-full hover:bg-zinc-800/50 dark:text-zinc-400 light:text-zinc-500 hover:text-gold transition-colors">
+          <button onClick={toggleTheme} className="w-10 h-10 flex items-center justify-center rounded-full text-lg hover:bg-zinc-800/50 dark:text-zinc-400 light:text-zinc-500 hover:text-gold transition-colors">
             <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
           </button>
         </div>
@@ -94,7 +95,7 @@ export default function Navbar({ theme, toggleTheme }) {
 
       {/* Reset Confirmation Modal */}
       {showResetConfirm && (
-        <div className="modal-overlay">
+        <div className="modal-overlay z-50 relative">
           <div className="modal-box w-full max-w-sm text-center space-y-4">
             <div className="text-5xl mb-2 text-red-500 dark:text-red-400">
               <FontAwesomeIcon icon={faTrashCan} />
