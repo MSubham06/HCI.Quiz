@@ -13,7 +13,7 @@
 ![PWA Ready](https://img.shields.io/badge/PWA-Add%20to%20Home%20Screen-orange?style=for-the-badge)
 
 **Transform HCI exam preparation into an addictive, game-like experience.**  
-*React · Tailwind CSS · Vite · Zero Backend · 120 Questions · Two Modes*  
+*React · Tailwind CSS · Vite · Zero Backend · 120 Questions · Three Modes*  
 *Fully responsive — study on your phone, tablet, or desktop. Anytime. Anywhere.*
 
 [🚀 Live Demo](#) · [📖 Documentation](#-table-of-contents) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
