@@ -41,7 +41,6 @@ export default function Navbar({ theme, toggleTheme }) {
           HCI <span className="text-gold">Quiz</span>
         </div>
         
-        {/* Changed gap to 0 to pack icons completely together */}
         <div className="flex items-center justify-end gap-0">
           
           {/* Mode Dropdown */}
@@ -93,9 +92,9 @@ export default function Navbar({ theme, toggleTheme }) {
         </div>
       </header>
 
-      {/* Reset Confirmation Modal */}
+      {/* Reset Confirmation Modal - FIXED FOR MOBILE */}
       {showResetConfirm && (
-        <div className="modal-overlay z-50 relative">
+        <div className="modal-overlay fixed inset-0 z-[100] flex items-center justify-center px-4">
           <div className="modal-box w-full max-w-sm text-center space-y-4">
             <div className="text-5xl mb-2 text-red-500 dark:text-red-400">
               <FontAwesomeIcon icon={faTrashCan} />

@@ -3,6 +3,9 @@ import { useQuestions } from '../../context/QuestionsContext.jsx'
 import { useGame } from '../../context/GameContext.jsx'
 import CongratsPanel from '../CongratsPanel.jsx'
 
+// Import the error audio asset
+import errorMp3 from '../../assets/error.mp3'
+
 export default function PracticeScreen() {
   const { questions, loading } = useQuestions()
   
@@ -14,6 +17,9 @@ export default function PracticeScreen() {
   const [selected, setSelected] = useState(null)
   const [showCongrats, setShowCongrats] = useState(false)
   const selectorRef = useRef(null)
+
+  // Audio Ref
+  const errorAudio = useRef(typeof Audio !== 'undefined' ? new Audio(errorMp3) : null)
 
   // Local storage state for practice attempts
   const [practiceAttempted, setPracticeAttempted] = useState(() => {
@@ -40,6 +46,14 @@ export default function PracticeScreen() {
   const attemptedCount = Object.keys(practiceAttempted).length
   const correctCount = Object.values(practiceAttempted).filter(v => v === 'correct').length
   const allDone = questions.length > 0 && attemptedCount >= questions.length
+
+  // Play error sound helper
+  const playErrorSound = useCallback(() => {
+    if (errorAudio.current) {
+      errorAudio.current.currentTime = 0; // reset to start
+      errorAudio.current.play().catch(err => console.log('Audio play prevented by browser:', err));
+    }
+  }, [])
 
   // Show congrats when all done
   useEffect(() => {
@@ -68,8 +82,13 @@ export default function PracticeScreen() {
     if (attempt || !stagedOption) return
     setSelected(stagedOption)
     const result = stagedOption === currentQ.correctAnswer ? 'correct' : 'wrong'
+    
+    if (result === 'wrong') {
+      playErrorSound()
+    }
+    
     markPracticeQuestion(currentQ.id, result)
-  }, [attempt, stagedOption, currentQ])
+  }, [attempt, stagedOption, currentQ, playErrorSound])
 
   // Keyboard accessibility
   useEffect(() => {
