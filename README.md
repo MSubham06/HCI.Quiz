@@ -12,11 +12,11 @@
 ![Responsive](https://img.shields.io/badge/Responsive-Mobile%20%7C%20Tablet%20%7C%20Desktop-blueviolet?style=for-the-badge)
 ![PWA Ready](https://img.shields.io/badge/PWA-Add%20to%20Home%20Screen-orange?style=for-the-badge)
 
-**Transform HCI exam preparation into an addictive, game-like experience.**
-*React · Tailwind CSS · Vite · Zero Backend · 120 Questions · Two Modes*
+**Transform HCI exam preparation into an addictive, game-like experience.**  
+*React · Tailwind CSS · Vite · Zero Backend · 120 Questions · Two Modes*  
 *Fully responsive — study on your phone, tablet, or desktop. Anytime. Anywhere.*
 
-[🚀 Live Demo](#) · [📖 Documentation](#table-of-contents) · [🐛 Report Bug](issues) · [✨ Request Feature](issues)
+[🚀 Live Demo](#) · [📖 Documentation](#-table-of-contents) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
 
 </div>
 
@@ -131,63 +131,71 @@ The timer uses `Date.now()` snapshots for accuracy — no drift over long sessio
 
 ### 🗺️ 2. Progression System (12 Weeks → 6 Boss Levels)
 
-| Level | Weeks | Topic | Unlock |
+| Level | Weeks | Topic | Unlock Requirement |
 |---|---|---|---|
 | 1 | 1–2 | HCI Foundations | Starting level |
-| 2 | 3–4 | Design Thinking | ≥75% on Level 1 |
-| 3 | 5–6 | Cognition & Data | ≥75% on Level 2 |
-| 4 | 7–8 | Prototyping & Evaluation | ≥75% on Level 3 |
-| 5 | 9–10 | IoT & AI in HCI | ≥75% on Level 4 |
-| 6 | 11–12 | Privacy, Security & Future | ≥75% on Level 5 |
+| 2 | 3–4 | Design Thinking | ≥ 75% on Level 1 |
+| 3 | 5–6 | Cognition & Data | ≥ 75% on Level 2 |
+| 4 | 7–8 | Prototyping & Evaluation | ≥ 75% on Level 3 |
+| 5 | 9–10 | IoT & AI in HCI | ≥ 75% on Level 4 |
+| 6 | 11–12 | Privacy, Security & Future | ≥ 75% on Level 5 |
 
-> 🔒 Locked levels are greyed out and unclickable. Unlock by scoring ≥75% on the previous level.
+> 🔒 Locked levels are greyed out and unclickable until the previous level is passed.
 
 ---
 
-### ❤️ 3. Health System
+### ❤️ 3. Health System (Hearts)
 
 ```
 ❤️ ❤️ ❤️  →  Wrong / Timeout  →  ❤️ ❤️ 🖤  →  0 hearts  →  💀 Game Over
 ```
+
+- Every wrong answer or timeout costs 1 Heart
+- If Hearts reach 0 → Game Over modal appears → restart the level
+- Risk makes every correct answer feel genuinely rewarding
+
+---
 
 ### 🔥 4. Streak Multipliers
 
 | Streak | Multiplier | Status |
 |---|---|---|
 | 1–2 Correct | **1x** | Normal |
-| 3–4 Correct | **1.5x** | Hot Streak |
+| 3–4 Correct | **1.5x** | 🌶️ Hot Streak |
 | 5+ Correct | **2x** | 🔥 ON FIRE |
+
+> A wrong answer or timeout resets the streak to 0.
 
 ---
 
 ## 📖 Practice Mode
 
-A completely separate, pressure-free way to go through all 120 HCI questions.
+A completely separate, pressure-free way to go through all 120 HCI questions. No timer. No hearts. No XP. Just learning.
 
 ### How It Works
 
 - All 120 questions displayed as a **scrollable numbered row** at the top
-- Each number shows a ✅ (correct), ❌ (wrong), or blank (not attempted) badge
-- Tap any number to jump directly — full freedom, no locks
-- Select an answer → correct answer + explanation shown immediately
+- Each number shows ✅ (correct), ❌ (wrong), or blank (not attempted)
+- Tap any number to jump directly to it — full freedom, no locks
+- Select an answer → correct answer + full explanation shown immediately
 - Previous / Next buttons for sequential navigation
 
 ### Practice Mode UI
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  [1✅][2✅][3❌][4][5][6] ... [118][119][120]   ← scroll   │
+│  [1✅][2✅][3❌][4][5][6] ... [118][119][120]  ← scroll    │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  Q47 · Week 9  ← Question number and week shown             │
+│  Q47 · Week 9                                                │
 │  What is the primary goal of IoT?                            │
 │                                                              │
 │  ○  To increase device size                                  │
-│  ● "To connect the unconnected"    ← ✅ Correct shown        │
-│  ○  To remove automation                                     │
+│  ●  "To connect the unconnected"      ← ✅ Correct           │
+│  ○  To remove automation from homes                          │
 │  ○  To limit wireless technology                             │
 │                                                              │
-│  ✅ Explanation shown immediately here                       │
+│  ✅ Explanation shown immediately                            │
 │  [← Previous]                          [Next →]             │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -196,19 +204,22 @@ A completely separate, pressure-free way to go through all 120 HCI questions.
 
 ## 👨‍💻 Developer Appreciation Popup
 
-Shown **on first visit only** — acknowledges the effort behind this free tool.
+Shown **on first visit only** — a warm thank-you acknowledging the effort behind this free tool.
 
 ### Behaviour
 
 | Action | Result |
 |---|---|
-| Click **"Thank You 🙏"** | Popup closes → `hci_appreciated: true` in localStorage → **never shown again** |
-| Click **✕ close icon** | Closes for this session only → will show again on next visit |
+| Click **"Thank You 🙏"** button | Popup closes → `hci_appreciated: true` saved to localStorage → **never shown again** |
+| Click **✕ close icon** (top-right) | Popup closes for this session only → will show again on the next visit |
+
+> The "Thank You" button is a one-time action. Once clicked, the popup is permanently dismissed.
 
 ### Popup Layout
 
 ```
 ┌──────────────────────────────────────────┐  ✕
+│                                          │
 │              🙏                          │
 │                                          │
 │   Hey, glad you're here!                 │
@@ -219,18 +230,18 @@ Shown **on first visit only** — acknowledges the effort behind this free tool.
 │                                          │
 │   [ 🙏  Thank You, I Appreciate It! ]    │
 │                                          │
-│   ─────────── connect ───────────        │
+│   ──────────── connect ──────────        │
 │                                          │
 │   💼 Follow the developer on LinkedIn    │
-│      for more free tools like this       │
+│      for more free tools like this →     │
 │   [ Follow on LinkedIn 🔗 ]              │
 │                                          │
 └──────────────────────────────────────────┘
 ```
 
-### How to set your LinkedIn URL
+### Setting Your LinkedIn URL
 
-Open `src/components/AppreciationPopup.jsx` and update line 1:
+Open `src/components/AppreciationPopup.jsx` and update **line 1**:
 
 ```js
 const LINKEDIN_URL = 'https://www.linkedin.com/in/YOUR_PROFILE_HERE'
@@ -240,7 +251,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/YOUR_PROFILE_HERE'
 
 ## 🎉 Completion & Congratulations Panel
 
-Appears when a student finishes **all questions** in either mode.
+Appears automatically when a student finishes **all questions** in either mode.
 
 ### Trigger Conditions
 
@@ -258,7 +269,7 @@ Appears when a student finishes **all questions** in either mode.
 | 50–74% | ⭐ | "Good job completing the full set! Focus on your weak areas and you'll nail it!" |
 | Below 50% | 💪 | "Well done for finishing! Every attempt makes you stronger. Give it another round!" |
 
-The panel also shows: Score, Accuracy %, Total XP, Correct count, Wrong count — and the iconic line:
+The panel shows: Score, Accuracy %, Total XP Earned, Questions Correct ✅, Questions Wrong ❌ — and always ends with:
 
 > **"All the very best for your HCI exam! 🚀 You've put in the work — now go ace it! 💪"**
 
@@ -270,12 +281,12 @@ The panel also shows: Score, Accuracy %, Total XP, Correct count, Wrong count �
 |---|---|---|
 | UI Framework | React 18 | Component reuse, fast state, hooks |
 | Routing | React Router v6 | Clean Game ↔ Practice navigation |
-| Styling | Tailwind CSS v3 | Utility-first, dark mode via `class` |
-| Build Tool | Vite 5 | Lightning-fast HMR, instant builds |
+| Styling | Tailwind CSS v3 | Utility-first, dark mode via `class` strategy |
+| Build Tool | Vite 5 | Lightning-fast HMR and production builds |
 | Fonts | Syne + DM Sans (Google Fonts) | Distinctive, non-generic pairing |
-| State | React Context + localStorage | No backend needed |
-| Data | questions.json (public folder) | Flat file — change exam, change JSON |
-| Hosting | GitHub Pages / Netlify / Vercel | Free static hosting |
+| State | React Context API + localStorage | Zero backend needed |
+| Data | `questions.json` in `/public` | Flat file — swap exam by swapping JSON |
+| Hosting | GitHub Pages / Netlify / Vercel | Free static deployment |
 
 ---
 
@@ -285,46 +296,49 @@ The panel also shows: Score, Accuracy %, Total XP, Correct count, Wrong count �
 hci-quiz/
 │
 ├── QuestionBank/
-│   └── questions.json          ← 📦 Master question bank (edit here)
+│   └── questions.json              ← 📦 Master question bank — edit here
 │
-└── frontend/
-    ├── public/
-    │   └── questions.json      ← Copy of QuestionBank (served by Vite)
-    │
-    ├── src/
-    │   ├── main.jsx            ← React entry point, theme init
-    │   ├── App.jsx             ← Root: routing, theme toggle, popup logic
-    │   │
-    │   ├── components/
-    │   │   ├── Navbar.jsx              ← Mode switcher + theme toggle + XP
-    │   │   ├── AppreciationPopup.jsx   ← First-visit developer popup
-    │   │   ├── CongratsPanel.jsx       ← Completion congratulations
-    │   │   │
-    │   │   ├── game/
-    │   │   │   ├── LevelSelect.jsx     ← 6 boss level cards, lock state
-    │   │   │   └── GameScreen.jsx      ← Full game engine (timer, hearts, XP)
-    │   │   │
-    │   │   └── practice/
-    │   │       └── PracticeScreen.jsx  ← 120 questions, free nav, feedback
-    │   │
-    │   ├── context/
-    │   │   ├── QuestionsContext.jsx    ← Fetches & caches questions.json
-    │   │   └── GameContext.jsx         ← Global XP, levels, practice state
-    │   │
-    │   ├── hooks/
-    │   │   └── useTimer.js             ← 30s countdown with Date.now() accuracy
-    │   │
-    │   └── styles/
-    │       └── index.css               ← Tailwind base + custom utilities
-    │
-    ├── index.html              ← Vite shell + PWA meta tags + Google Fonts
-    ├── tailwind.config.js      ← Theme colours, dark mode, custom animations
-    ├── vite.config.js          ← Vite + React plugin
-    ├── postcss.config.js
-    └── package.json
+├── frontend/
+│   ├── public/
+│   │   └── questions.json          ← Copy of QuestionBank (served by Vite)
+│   │
+│   ├── src/
+│   │   ├── main.jsx                ← React entry point + theme init (no flash)
+│   │   ├── App.jsx                 ← Root: routing, theme toggle, popup logic
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx                  ← Mode switcher + theme toggle + XP
+│   │   │   ├── AppreciationPopup.jsx       ← First-visit developer popup
+│   │   │   ├── CongratsPanel.jsx           ← Completion congratulations panel
+│   │   │   │
+│   │   │   ├── game/
+│   │   │   │   ├── LevelSelect.jsx         ← 6 boss level cards with lock state
+│   │   │   │   └── GameScreen.jsx          ← Full game engine (timer, hearts, XP)
+│   │   │   │
+│   │   │   └── practice/
+│   │   │       └── PracticeScreen.jsx      ← 120 questions, free nav, instant feedback
+│   │   │
+│   │   ├── context/
+│   │   │   ├── QuestionsContext.jsx        ← Fetches & caches questions.json
+│   │   │   └── GameContext.jsx             ← Global XP, levels, practice progress
+│   │   │
+│   │   ├── hooks/
+│   │   │   └── useTimer.js                 ← 30s countdown using Date.now() — no drift
+│   │   │
+│   │   └── styles/
+│   │       └── index.css                   ← Tailwind base + custom CSS utilities
+│   │
+│   ├── index.html                  ← Vite shell + PWA meta tags + Google Fonts
+│   ├── tailwind.config.js          ← Theme colours, dark mode, custom animations
+│   ├── vite.config.js              ← Vite + React plugin config
+│   ├── postcss.config.js           ← PostCSS + Autoprefixer
+│   └── package.json                ← Dependencies and scripts
+│
+├── README.md                       ← This file
+└── LICENSE                         ← MIT License
 ```
 
-> **QuestionBank/** is the source of truth. When you update questions, copy the file to `frontend/public/questions.json` too.
+> **`QuestionBank/`** is the source of truth. After editing, always copy to `frontend/public/questions.json`.
 
 ---
 
@@ -335,30 +349,30 @@ hci-quiz/
 | Role | Font | Why |
 |---|---|---|
 | Headings / UI labels | `Syne` | Bold, geometric — feels competitive and sharp |
-| Body / questions | `DM Sans` | Highly readable at all sizes, warm and approachable |
+| Body / question text | `DM Sans` | Highly readable at all sizes, warm and approachable |
 
 ### Color Palette
 
 #### 🌑 Dark Theme (Default)
 
-| Role | Tailwind | Hex |
+| Role | Tailwind Token | Hex |
 |---|---|---|
 | Page Background | `zinc-950` | `#0f0f0f` |
 | Card Surface | `zinc-900` | `#18181b` |
 | Card Border | `zinc-800` | `#27272a` |
-| Gold Accent | Custom `gold` | `#f0c040` |
+| Gold Accent | custom `gold-400` | `#f0c040` |
 | Text Primary | `zinc-100` | `#f4f4f5` |
 | Text Muted | `zinc-400` | `#a1a1aa` |
-| Danger (hearts) | `red-400` | `#f87171` |
+| Danger / Hearts | `red-400` | `#f87171` |
 | Success | `green-400` | `#4ade80` |
 
 #### ☀️ Light Theme
 
-| Role | Tailwind | Hex |
+| Role | Tailwind Token | Hex |
 |---|---|---|
 | Page Background | `amber-50` | `#f5f0e8` |
 | Card Surface | `white` | `#ffffff` |
-| Card Border | `amber-100` | `#fde68a` |
+| Card Border | `amber-100` | `#fef3c7` |
 | Gold Accent | `yellow-700` | `#b8860b` |
 | Text Primary | `zinc-900` | `#18181b` |
 | Text Muted | `zinc-500` | `#71717a` |
@@ -367,14 +381,14 @@ hci-quiz/
 
 ## 📦 Data Schema
 
-Questions live in `QuestionBank/questions.json` (and copied to `frontend/public/questions.json`):
+All questions live in `QuestionBank/questions.json` (copied to `frontend/public/questions.json`):
 
 ```json
 {
   "id": "q001",
   "level": 1,
   "week": 1,
-  "question": "What is the primary goal of HCI?",
+  "question": "What is the primary goal of Human-Computer Interaction (HCI)?",
   "options": [
     "Improve computer hardware",
     "Make interaction effective, efficient, and satisfying",
@@ -387,34 +401,40 @@ Questions live in `QuestionBank/questions.json` (and copied to `frontend/public/
 }
 ```
 
+### Field Reference
+
 | Field | Type | Notes |
 |---|---|---|
-| `id` | `string` | Unique — `q001` to `q120` |
-| `level` | `integer` | 1–6, controls which Boss Level this belongs to |
-| `week` | `integer` | 1–12, shown as label in Practice Mode |
+| `id` | `string` | Unique identifier — `q001` through `q120` |
+| `level` | `integer` | 1–6, determines which Boss Level the question belongs to |
+| `week` | `integer` | 1–12, displayed as a label in Practice Mode |
 | `question` | `string` | Full question text |
-| `options` | `string[]` | Exactly 4 options |
-| `correctAnswer` | `string` | Must exactly match one of the `options` strings |
-| `explanation` | `string` | Shown after answering in both modes |
-| `points` | `integer` | Base XP before multiplier (use `10` for all) |
+| `options` | `string[]` | Exactly 4 answer choices |
+| `correctAnswer` | `string` | Must be an exact string match with one of the options |
+| `explanation` | `string` | Shown after answering in both Game and Practice Mode |
+| `points` | `integer` | Base XP before multiplier — use `10` for all questions |
 
-> ⚠️ `correctAnswer` is case-sensitive and must be an exact string match with one option.
+> ⚠️ `correctAnswer` is **case-sensitive** and must match one option exactly, character for character.
 
 ---
 
 ## 💾 State Management
 
-All progress lives in `localStorage`. No backend, no accounts, no server.
+All progress is stored in the browser's `localStorage`. No backend, no accounts, no server required.
+
+### Complete Key Reference
 
 | Key | Type | Set When |
 |---|---|---|
-| `hci_theme` | `"dark"` / `"light"` | User toggles theme |
-| `hci_appreciated` | `"true"` | User clicks Thank You in popup |
+| `hci_theme` | `"dark"` / `"light"` | User toggles the theme button |
+| `hci_appreciated` | `"true"` | User clicks "Thank You" in the popup |
 | `hci_total_xp` | `integer` | After every correct answer in Game Mode |
-| `hci_highest_level` | `integer` 1–6 | After passing a level |
-| `hci_practice_attempted` | `JSON object` | Each question attempted in Practice Mode |
-| `hci_game_completed` | `"true"` | All 6 levels completed |
-| `hci_practice_completed` | `"true"` | All 120 practice questions attempted |
+| `hci_highest_level` | `integer` 1–6 | After passing a level with ≥ 75% accuracy |
+| `hci_practice_attempted` | `JSON object` | `{ "q001": "correct", "q002": "wrong" }` |
+| `hci_game_completed` | `"true"` | All 6 Game Mode levels completed |
+| `hci_practice_completed` | `"true"` | All 120 Practice questions attempted |
+
+> ⚠️ Progress is browser-specific. Clearing browser data will reset all progress.
 
 ---
 
@@ -423,8 +443,8 @@ All progress lives in `localStorage`. No backend, no accounts, no server.
 ### Prerequisites
 
 - **Node.js v18 or higher** — [Download here](https://nodejs.org)
-- **npm** (comes with Node) or yarn
-- A code editor — **VS Code** recommended
+- **npm** (bundled with Node.js) or yarn
+- A code editor — **VS Code** is recommended
 
 ---
 
@@ -437,7 +457,7 @@ cd hci-quiz
 
 ---
 
-### Step 2 — Go into the frontend folder
+### Step 2 — Navigate to the frontend folder
 
 ```bash
 cd frontend
@@ -445,19 +465,19 @@ cd frontend
 
 ---
 
-### Step 3 — Install dependencies
+### Step 3 — Install all dependencies
 
 ```bash
 npm install
 ```
 
-This installs: React, React Router, Tailwind CSS, Vite, PostCSS, Autoprefixer.
+This installs: React 18, React Router v6, Tailwind CSS v3, Vite 5, PostCSS, and Autoprefixer.
 
 ---
 
 ### Step 4 — Set your LinkedIn URL
 
-Open `src/components/AppreciationPopup.jsx` and update:
+Open `src/components/AppreciationPopup.jsx` and update line 1:
 
 ```js
 const LINKEDIN_URL = 'https://www.linkedin.com/in/YOUR_PROFILE_HERE'
@@ -473,7 +493,7 @@ npm run dev
 
 Open your browser at: **http://localhost:5173**
 
-> The app hot-reloads on every save — no refresh needed.
+The app hot-reloads on every file save — no manual refresh needed.
 
 ---
 
@@ -483,7 +503,7 @@ Open your browser at: **http://localhost:5173**
 npm run build
 ```
 
-Output is in the `/dist` folder. Deploy this folder to any static host.
+The optimised output is in the `/dist` folder. Upload this folder to any static host.
 
 ---
 
@@ -492,32 +512,35 @@ Output is in the `/dist` folder. Deploy this folder to any static host.
 ```bash
 # Install the deploy tool
 npm install --save-dev gh-pages
+```
 
-# Add this to package.json scripts:
-# "deploy": "gh-pages -d dist"
+Add this to `package.json` under `"scripts"`:
 
-# Build and deploy
+```json
+"deploy": "gh-pages -d dist"
+```
+
+Then build and deploy:
+
+```bash
 npm run build
 npm run deploy
 ```
 
 Your site will be live at: `https://YOUR_USERNAME.github.io/hci-quiz/`
 
-> Students bookmark the URL and access it from any device — phone, tablet, or laptop.
-
 ---
 
-### Step 8 — Update questions (when needed)
+### Step 8 — Sync questions when you make changes
 
-1. Edit `QuestionBank/questions.json`
-2. Copy it to `frontend/public/questions.json`
+After editing `QuestionBank/questions.json`, always copy it to the public folder:
 
 ```bash
-# From the project root:
+# Run from the project root (hci-quiz/)
 cp QuestionBank/questions.json frontend/public/questions.json
 ```
 
-The QuestionBank folder is designed so you can swap the entire question set for a different exam (e.g., Design Thinking, UX Research) just by replacing the JSON file.
+The `QuestionBank/` folder is the single source of truth. The `frontend/public/` copy is what Vite actually serves to the browser.
 
 ---
 
@@ -525,22 +548,23 @@ The QuestionBank folder is designed so you can swap the entire question set for 
 
 ### Adding a new question
 
-Open `QuestionBank/questions.json`, add an object at the right `level`:
+Open `QuestionBank/questions.json` and append a new object inside the array:
 
 ```json
 {
   "id": "q121",
   "level": 3,
   "week": 5,
-  "question": "Which cognitive law states that working memory holds 7±2 items?",
+  "question": "Which cognitive law states that working memory holds 7 ± 2 items?",
   "options": ["Fitts's Law", "Miller's Law", "Hick's Law", "Norman's Law"],
   "correctAnswer": "Miller's Law",
-  "explanation": "George Miller's 1956 paper proposed that human short-term memory can hold approximately 7 (plus or minus 2) chunks of information.",
+  "explanation": "George Miller's 1956 paper proposed that human short-term memory can hold approximately 7 (plus or minus 2) chunks of information at once.",
   "points": 10
 }
 ```
 
-Then copy to public:
+Then sync to public:
+
 ```bash
 cp QuestionBank/questions.json frontend/public/questions.json
 ```
@@ -549,7 +573,7 @@ cp QuestionBank/questions.json frontend/public/questions.json
 
 1. Replace all entries in `QuestionBank/questions.json` with the new exam's questions
 2. Copy to `frontend/public/questions.json`
-3. Update level/week labels in `src/components/game/LevelSelect.jsx`
+3. Update the level title labels in `src/components/game/LevelSelect.jsx`
 4. Done — the entire platform adapts automatically
 
 ---
@@ -557,15 +581,15 @@ cp QuestionBank/questions.json frontend/public/questions.json
 ## 🏆 Progression System
 
 ```
-[L1] ──(≥75%)──► [L2] ──(≥75%)──► [L3]
-                                     │
-[L6] ◄──(≥75%)── [L5] ◄──(≥75%)── [L4]
+[L1] ──(≥ 75%)──► [L2] ──(≥ 75%)──► [L3]
+                                        │
+[L6] ◄──(≥ 75%)── [L5] ◄──(≥ 75%)── [L4]
 ```
 
-- Questions are **shuffled** on every attempt (Fisher-Yates) — prevents memorising answer position
-- Timeouts count as wrong answers
-- Failing (< 75%) → retry prompt
-- Passing → `hci_highest_level` updated in localStorage → next level card unlocks
+- Questions are **shuffled** on every attempt using Fisher-Yates — prevents memorising answer positions
+- Timeouts count as wrong answers in accuracy calculation
+- Failing (< 75%) → shows score → prompts retry
+- Passing (≥ 75%) → `hci_highest_level` updated → next level card unlocks instantly
 
 ---
 
@@ -574,67 +598,74 @@ cp QuestionBank/questions.json frontend/public/questions.json
 ```
 Final XP = (base_points × streak_multiplier) + speed_bonus
 
-streak_multiplier = 1.0 (1-2)  |  1.5 (3-4)  |  2.0 (5+)
-speed_bonus       = +5 XP if answered correctly AND timeLeft > 20s
+streak_multiplier = 1.0 (streak 1–2)  |  1.5 (streak 3–4)  |  2.0 (streak 5+)
+speed_bonus       = +5 XP if answered correctly AND timeLeft > 20 seconds
 ```
 
-| Scenario | XP |
-|---|---|
-| Correct, slow, streak 1 | **10 XP** |
-| Correct, fast, streak 2 | **15 XP** |
-| Correct, fast, streak 4 | **20 XP** |
-| Correct, fast, streak 6 | **25 XP** |
-| Wrong or Timeout | **0 XP** |
+| Scenario | Calculation | XP Earned |
+|---|---|---|
+| Correct, slow, streak 1 | 10 × 1.0 + 0 | **10 XP** |
+| Correct, fast, streak 2 | 10 × 1.0 + 5 | **15 XP** |
+| Correct, fast, streak 4 | 10 × 1.5 + 5 | **20 XP** |
+| Correct, fast, streak 6 | 10 × 2.0 + 5 | **25 XP** |
+| Wrong or Timeout | — | **0 XP** |
 
 ---
 
 ## 🌗 Dark & Light Theme
 
-Toggle is pinned in the Navbar — always visible. Theme persists across sessions.
+The toggle is pinned in the Navbar — always visible, works on every screen size.
 
 ```jsx
-// main.jsx — applied before first paint, no flash
+// main.jsx — theme applied before first paint to prevent any flash
 const savedTheme = localStorage.getItem('hci_theme') || 'dark'
 document.documentElement.className = savedTheme
 ```
 
 ```js
 // tailwind.config.js
-darkMode: 'class'  // Controlled by <html class="dark"> or <html class="light">
+darkMode: 'class'
+// Dark = <html class="dark">
+// Light = <html class="light">
 ```
+
+All colours are CSS custom properties — no JavaScript re-renders needed when toggling.
 
 ---
 
 ## 📱 Responsive Design
 
-Built **mobile-first**. All breakpoints:
+Built **mobile-first** and scales up beautifully to tablet and desktop.
 
-| Breakpoint | Devices | Layout |
+### Breakpoints
+
+| Breakpoint | Target Devices | Layout |
 |---|---|---|
-| `< 480px` | Small phones — iPhone SE, Redmi | Single column, full-width, large taps |
-| `480–767px` | Standard phones | Single column, sticky question selector |
-| `768–1023px` | Tablets | Wider cards, more padding |
-| `≥ 1024px` | Laptops & desktops | Max-width `1024px` container, centred |
+| `< 480px` | Small phones — iPhone SE, Redmi | Single column, full-width cards, large tap targets |
+| `480–767px` | Standard phones — iPhone 14, Pixel | Single column, sticky scrollable question selector |
+| `768–1023px` | Tablets — iPad, Samsung Tab | Wider cards, increased padding |
+| `≥ 1024px` | Laptops & desktops | Max-width `1024px` centred container |
 
-### Mobile UX rules enforced
+### Mobile UX Rules
 
 | Rule | Detail |
 |---|---|
-| Tap targets | All buttons `min-height: 48px` |
-| No zoom | `maximum-scale=1.0` in viewport meta |
-| Smooth scroll | `-webkit-overflow-scrolling: touch` on question selector row |
-| No tap highlight | `-webkit-tap-highlight-color: transparent` globally |
-| Font size | Base `16px` — prevents iOS auto-zoom on inputs |
-| Modals | `max-width: 95vw`, `max-height: 90vh` — never overflow |
+| Tap targets | All buttons `min-height: 48px` (Google Material standard) |
+| No pinch-zoom | `maximum-scale=1.0` in viewport meta tag |
+| Smooth iOS scroll | `-webkit-overflow-scrolling: touch` on question selector row |
+| No tap highlight | `-webkit-tap-highlight-color: transparent` applied globally |
+| Font size floor | `16px` minimum on all interactive elements — prevents iOS auto-zoom |
+| Modals | `width: 95vw`, `max-height: 90vh` — never overflow on any screen |
+| Theme toggle | Always visible in Navbar — never scrolled out of reach |
 
 ### Add to Home Screen (PWA)
 
-Students can add the platform to their phone home screen:
+Students can install the platform on their home screen for a native-app feel:
 
 | Device | Steps |
 |---|---|
-| **Android Chrome** | ⋮ menu → "Add to Home screen" |
-| **iPhone Safari** | Share `⬆️` → "Add to Home Screen" |
+| **Android Chrome** | Tap ⋮ menu → "Add to Home screen" → Add |
+| **iPhone Safari** | Tap Share `⬆️` → "Add to Home Screen" → Add |
 
 ---
 
@@ -642,13 +673,13 @@ Students can add the platform to their phone home screen:
 
 - [x] 🎮 Game Mode — timer, hearts, streaks, XP, 6 boss levels
 - [x] 📖 Practice Mode — 120 questions, scrollable selector, free navigation, instant feedback
-- [x] 👨‍💻 Developer Appreciation Popup — one-time thank you, LinkedIn follow
+- [x] 👨‍💻 Developer Appreciation Popup — one-time thank you + LinkedIn follow
 - [x] 🎉 Completion & Congratulations Panel — personalised by accuracy %
-- [x] 🌗 Dark / Light theme — persisted across sessions
+- [x] 🌗 Dark / Light theme — persisted across sessions, no flash on load
 - [x] 📱 Fully responsive — mobile, tablet & desktop
 - [x] 📲 PWA Add to Home Screen meta tags
-- [x] ⌨️ Keyboard shortcuts (1/2/3/4) for desktop users
-- [ ] 🏆 Local leaderboard — top 5 scores stored on device
+- [x] ⌨️ Keyboard shortcuts (`1` `2` `3` `4`) for desktop users
+- [ ] 🏆 Local leaderboard — top 5 scores stored per device
 - [ ] 📚 Subject selector — swap between different NPTEL courses
 - [ ] 🔊 Sound effects — correct, wrong, fire streak, game over
 - [ ] 🎊 Confetti animation on level completion
@@ -660,20 +691,24 @@ Students can add the platform to their phone home screen:
 
 ## 🤝 Contributing
 
+Contributions are welcome! Here's how:
+
 1. Fork the repository
-2. Create a branch: `git checkout -b feature/your-feature`
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
 3. Make your changes
 4. Commit: `git commit -m "feat: describe your change"`
-5. Push and open a Pull Request
+5. Push: `git push origin feature/your-feature-name`
+6. Open a Pull Request
 
 ### Guidelines
 
 - All styling via Tailwind utility classes — no inline styles
-- Use CSS variables for any custom colours
+- Use CSS variables for any custom colours — never hardcode hex values
 - All new questions must include an `explanation` field
-- Test on **real mobile Safari (iOS)** before submitting — DevTools is not enough
-- Test in **both dark and light themes**
-- Verify the question selector scrolls correctly on mobile
+- Test on a **real iOS device in Safari** before submitting — DevTools emulation is not sufficient
+- Test in both **dark and light themes**
+- Verify the question selector row scrolls correctly on mobile
+- Run `npm run build` and confirm no build errors before submitting
 
 ---
 
@@ -683,38 +718,39 @@ Students can add the platform to their phone home screen:
 
 | Issue | Fix |
 |---|---|
-| `questions.json` 404 error | File must be in `frontend/public/` — Vite serves this statically |
-| Theme flashes on load | `main.jsx` applies theme class before first render — must stay as-is |
-| iOS tap highlight shows | `-webkit-tap-highlight-color: transparent` is in `index.css` globally |
-| iOS auto-zoom on tap | All interactive elements font-size kept at `≥ 16px` |
-| Timer drifts after long session | `useTimer.js` uses `Date.now()` snapshots — immune to drift |
-| Popup shows after Thank You | Confirm `localStorage.setItem('hci_appreciated', 'true')` runs before `setShowPopup(false)` |
-| Questions not shuffling | Shuffle happens in `GameScreen.jsx` via Fisher-Yates on load |
-| `questions.json` not updating | Remember to copy from `QuestionBank/` to `frontend/public/` after editing |
+| `questions.json` returns 404 | File must be in `frontend/public/` — Vite only serves files from this folder statically |
+| Theme flashes white on load | `main.jsx` applies theme class before first render — do not move this logic |
+| iOS tap highlight appears | `-webkit-tap-highlight-color: transparent` is set globally in `index.css` |
+| iOS auto-zoom on option tap | Keep all interactive element font sizes at `≥ 16px` |
+| Timer drifts over long session | `useTimer.js` uses `Date.now()` snapshots — it is immune to `setInterval` drift |
+| Popup reappears after Thank You | Confirm `localStorage.setItem('hci_appreciated', 'true')` fires before `setShowPopup(false)` |
+| Questions not randomising | Fisher-Yates shuffle runs in `GameScreen.jsx` on component mount |
+| Questions stale after edit | Always copy `QuestionBank/questions.json` → `frontend/public/questions.json` after every edit |
 
 ### Responsive Testing Checklist
 
-Before every release:
+Run through this before every release:
 
-- [ ] Chrome DevTools — iPhone SE (375px)
+- [ ] Chrome DevTools — iPhone SE (375px width)
 - [ ] Chrome DevTools — iPhone 14 Pro (393px)
 - [ ] Chrome DevTools — iPad Air (820px)
 - [ ] Chrome DevTools — Desktop 1440px
-- [ ] Real Android device — Chrome
+- [ ] Real Android device — Chrome browser
 - [ ] Real iPhone — Safari *(critical — iOS behaves differently from DevTools)*
-- [ ] Dark theme on all above
-- [ ] Light theme on all above
-- [ ] Appreciation popup appears on first visit
-- [ ] Thank You → popup never shows again after page reload
-- [ ] Close (✕) → popup appears again on next visit
-- [ ] Congratulations panel appears when all questions done in both modes
-- [ ] Question selector scrolls horizontally on mobile
+- [ ] Dark theme on all screen sizes above
+- [ ] Light theme on all screen sizes above
+- [ ] Appreciation popup appears correctly on first visit
+- [ ] "Thank You" click → popup never shown again after page reload
+- [ ] "✕" click → popup appears again on next visit
+- [ ] Congratulations panel triggers correctly in both Game and Practice Mode
+- [ ] Question selector row scrolls horizontally on mobile without clipping
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE` for full details.
+Distributed under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for full details.
 
 ---
 
