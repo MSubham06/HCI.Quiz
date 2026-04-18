@@ -36,8 +36,8 @@ export default function Navbar({ theme, toggleTheme }) {
 
   return (
     <>
-      <header className="w-full border-b dark:border-zinc-800 light:border-amber-200 p-4 flex justify-between items-center bg-transparent">
-        <div className="font-display font-bold text-xl dark:text-zinc-100 light:text-zinc-900">
+      <header className="w-full border-b border-amber-200 dark:border-zinc-800 p-4 flex justify-between items-center bg-transparent">
+        <div className="font-display font-bold text-xl text-zinc-900 dark:text-zinc-100">
           HCI <span className="text-gold">Quiz</span>
         </div>
         
@@ -47,20 +47,20 @@ export default function Navbar({ theme, toggleTheme }) {
           <div className="relative" ref={dropdownRef}>
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-2 text-sm font-semibold transition-colors px-3 py-2 rounded-lg dark:text-zinc-100 light:text-zinc-900 hover:text-gold dark:hover:text-gold"
+              className="flex items-center gap-2 text-sm font-semibold transition-colors px-3 py-2 rounded-lg text-zinc-900 dark:text-zinc-100 hover:text-gold dark:hover:text-gold outline-none focus:outline-none"
             >
               {getCurrentMode()} <FontAwesomeIcon icon={faChevronDown} className={`text-[10px] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute top-full right-0 mt-3 w-48 rounded-xl border dark:border-zinc-700 light:border-amber-200 dark:bg-zinc-900 light:bg-white shadow-2xl overflow-hidden z-50 animate-fade-in">
-                <Link to="/game" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname.includes('/game') ? 'bg-zinc-800/50 text-gold' : 'dark:text-zinc-300 light:text-zinc-700 hover:bg-zinc-800/50 hover:text-gold'}`}>
+              <div className="absolute top-full right-0 mt-3 w-48 rounded-xl border border-amber-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-2xl overflow-hidden z-50 animate-fade-in">
+                <Link to="/game" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname.includes('/game') ? 'bg-zinc-100 dark:bg-zinc-800/50 text-gold' : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 hover:text-gold'}`}>
                   Game Mode
                 </Link>
-                <Link to="/practice" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname === '/practice' ? 'bg-zinc-800/50 text-gold' : 'dark:text-zinc-300 light:text-zinc-700 hover:bg-zinc-800/50 hover:text-gold'}`}>
+                <Link to="/practice" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname === '/practice' ? 'bg-zinc-100 dark:bg-zinc-800/50 text-gold' : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 hover:text-gold'}`}>
                   Practice Mode
                 </Link>
-                <Link to="/qa" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname === '/qa' ? 'bg-zinc-800/50 text-gold' : 'dark:text-zinc-300 light:text-zinc-700 hover:bg-zinc-800/50 hover:text-gold'}`}>
+                <Link to="/qa" onClick={() => setIsDropdownOpen(false)} className={`block px-4 py-3 text-sm font-body transition-colors ${location.pathname === '/qa' ? 'bg-zinc-100 dark:bg-zinc-800/50 text-gold' : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 hover:text-gold'}`}>
                   Q&A Reader
                 </Link>
               </div>
@@ -71,7 +71,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <Link 
             to="/about"
             title="About Developer"
-            className={`w-10 h-10 rounded-full transition-colors flex items-center justify-center text-lg ${location.pathname === '/about' ? 'text-gold bg-zinc-800/50' : 'dark:text-zinc-400 light:text-zinc-500 hover:bg-zinc-800/50 hover:text-gold'}`}
+            className={`w-10 h-10 rounded-full transition-colors flex items-center justify-center text-lg outline-none focus:outline-none ${location.pathname === '/about' ? 'text-gold bg-zinc-200 dark:bg-zinc-800/50' : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800/50 hover:text-gold'}`}
           >
             <FontAwesomeIcon icon={faUserTie} />
           </Link>
@@ -80,19 +80,19 @@ export default function Navbar({ theme, toggleTheme }) {
           <button 
             onClick={() => setShowResetConfirm(true)}
             title="Reset All Data"
-            className="w-10 h-10 rounded-full flex items-center justify-center text-lg dark:text-zinc-400 light:text-zinc-500 hover:bg-red-500/10 hover:text-red-400 transition-colors"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-lg text-zinc-500 dark:text-zinc-400 hover:bg-red-100 dark:hover:bg-red-500/10 hover:text-red-500 dark:hover:text-red-400 transition-colors outline-none focus:outline-none"
           >
             <FontAwesomeIcon icon={faTrashCan} />
           </button>
           
           {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="w-10 h-10 flex items-center justify-center rounded-full text-lg hover:bg-zinc-800/50 dark:text-zinc-400 light:text-zinc-500 hover:text-gold transition-colors">
+          <button onClick={toggleTheme} className="w-10 h-10 flex items-center justify-center rounded-full text-lg text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800/50 hover:text-gold transition-colors outline-none focus:outline-none">
             <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
           </button>
         </div>
       </header>
 
-      {/* Reset Confirmation Modal - FIXED FOR MOBILE */}
+      {/* Reset Confirmation Modal */}
       {showResetConfirm && (
         <div className="modal-overlay fixed inset-0 z-[100] flex items-center justify-center px-4">
           <div className="modal-box w-full max-w-sm text-center space-y-4">
@@ -102,7 +102,7 @@ export default function Navbar({ theme, toggleTheme }) {
             <h2 className="font-display font-bold text-xl text-red-500 dark:text-red-400">
               Delete All Progress?
             </h2>
-            <p className="text-sm dark:text-zinc-400 light:text-zinc-500 font-body leading-relaxed">
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 font-body leading-relaxed">
               This will permanently delete all your XP, unlocked levels, streaks, and practice history. You will start completely from scratch. 
               <br/><br/>
               <strong>This action cannot be undone.</strong>
@@ -111,13 +111,13 @@ export default function Navbar({ theme, toggleTheme }) {
             <div className="flex gap-3 pt-2">
               <button 
                 onClick={() => setShowResetConfirm(false)} 
-                className="btn-ghost flex-1"
+                className="btn-ghost flex-1 outline-none focus:outline-none"
               >
                 Cancel
               </button>
               <button 
                 onClick={handleReset} 
-                className="flex-1 px-5 py-3 rounded-xl font-display font-semibold text-sm bg-red-500 text-white hover:bg-red-600 active:scale-95 transition-all duration-150"
+                className="flex-1 px-5 py-3 rounded-xl font-display font-semibold text-sm bg-red-500 text-white hover:bg-red-600 active:scale-95 transition-all duration-150 outline-none focus:outline-none"
               >
                 Yes, Delete
               </button>

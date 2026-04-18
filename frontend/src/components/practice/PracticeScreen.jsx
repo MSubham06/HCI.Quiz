@@ -13,10 +13,12 @@ export default function PracticeScreen() {
   const { completePractice = () => localStorage.setItem('hci_practice_completed', 'true') } = useGame()
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [stagedOption, setStagedOption] = useState(null) // Added staging state
+  const [stagedOption, setStagedOption] = useState(null)
   const [selected, setSelected] = useState(null)
   const [showCongrats, setShowCongrats] = useState(false)
+  
   const selectorRef = useRef(null)
+  const hasShownCongrats = useRef(false) // Prevents the infinite popup loop
 
   // Audio Ref
   const errorAudio = useRef(typeof Audio !== 'undefined' ? new Audio(errorMp3) : null)
@@ -55,10 +57,11 @@ export default function PracticeScreen() {
     }
   }, [])
 
-  // Show congrats when all done
+  // Show congrats when all done (only triggers ONCE per session now)
   useEffect(() => {
-    if (allDone && !showCongrats) {
+    if (allDone && !showCongrats && !hasShownCongrats.current) {
       completePractice()
+      hasShownCongrats.current = true // Mark as shown
       setTimeout(() => setShowCongrats(true), 600)
     }
   }, [allDone, showCongrats, completePractice])
@@ -123,11 +126,20 @@ export default function PracticeScreen() {
     setCurrentIndex(0)
     setSelected(null)
     setStagedOption(null)
+    
+    // Completely clear progress so they can start fresh
+    setPracticeAttempted({})
+    localStorage.removeItem('nptel_practice_attempted')
+    hasShownCongrats.current = false // Reset the trigger for the next round
   }
 
   if (loading) return (
-    <div className="flex items-center justify-center h-64">
-      <div className="text-3xl animate-pulse">📖</div>
+    <div className="flex flex-col items-center justify-center h-64 space-y-4">
+      {/* FIXED: Using text-gold and border-t-current forces the gold color to show and makes the spin obvious */}
+      <div className="w-10 h-10 border-4 border-amber-200 dark:border-zinc-800 border-t-current text-gold rounded-full animate-spin"></div>
+      <p className="font-display font-semibold text-sm text-zinc-500 dark:text-zinc-400 animate-pulse">
+        Loading Questions...
+      </p>
     </div>
   )
 
@@ -144,6 +156,7 @@ export default function PracticeScreen() {
           total={questions.length}
           mode="practice"
           onPlayAgain={handlePlayAgain}
+          onClose={() => setShowCongrats(false)}
         />
       )}
 
@@ -188,7 +201,7 @@ export default function PracticeScreen() {
                     ? 'bg-green-500/10 text-green-400 border-green-500/30 hover:border-green-400'
                     : att === 'wrong'
                       ? 'bg-red-500/10 text-red-400 border-red-500/30 hover:border-red-400'
-                      : 'dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 light:bg-white light:border-amber-200 light:text-zinc-500 light:hover:border-amber-400'
+                      : 'dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-500 bg-white border-amber-200 text-zinc-500 hover:border-amber-400'
                 }`}
             >
               {i + 1}
@@ -213,7 +226,7 @@ export default function PracticeScreen() {
             </span>
           )}
         </div>
-        <p className="font-body text-base sm:text-lg dark:text-zinc-100 light:text-zinc-900 leading-relaxed">
+        <p className="font-body text-base sm:text-lg dark:text-zinc-100 text-zinc-900 leading-relaxed">
           {currentQ.question}
         </p>
       </div>
@@ -273,11 +286,11 @@ export default function PracticeScreen() {
       {/* Explanation (shown after answering) */}
       {(selected || alreadyAnswered) && (
         <div className="card p-4 text-sm font-body animate-slide-up
-          dark:bg-zinc-800/50 light:bg-amber-50">
-          <p className="font-display font-semibold text-xs mb-1 dark:text-zinc-400 light:text-zinc-500 uppercase tracking-wide">
+          dark:bg-zinc-800/50 bg-amber-50">
+          <p className="font-display font-semibold text-xs mb-1 dark:text-zinc-400 text-zinc-500 uppercase tracking-wide">
             Explanation
           </p>
-          <p className="dark:text-zinc-300 light:text-zinc-600 leading-relaxed">
+          <p className="dark:text-zinc-300 text-zinc-600 leading-relaxed">
             {currentQ.explanation}
           </p>
           <p className="mt-2 text-xs font-display font-semibold text-gold">
@@ -287,7 +300,7 @@ export default function PracticeScreen() {
       )}
 
       {/* Navigation buttons */}
-      <div className="flex gap-3 pb-6 pt-2 border-t dark:border-zinc-800 light:border-amber-200 mt-4">
+      <div className="flex gap-3 pb-6 pt-2 border-t dark:border-zinc-800 border-amber-200 mt-4">
         <button
           onClick={goPrev}
           disabled={currentIndex === 0}

@@ -187,8 +187,11 @@ export default function GameScreen() {
   }
 
   if (loading || questions.length === 0) return (
-    <div className="flex items-center justify-center h-64">
-      <div className="text-3xl animate-pulse">⚡</div>
+    <div className="flex flex-col items-center justify-center h-64 space-y-4">
+      <div className="w-10 h-10 border-4 border-amber-200 dark:border-zinc-800 border-t-current text-gold rounded-full animate-spin"></div>
+      <p className="font-display font-semibold text-sm text-zinc-500 dark:text-zinc-400 animate-pulse">
+        Loading Questions...
+      </p>
     </div>
   )
 
@@ -202,11 +205,11 @@ export default function GameScreen() {
       <div className="modal-overlay">
         <div className="modal-box w-full max-w-sm text-center space-y-4">
           <div className="text-4xl">{passed ? '🎉' : '😔'}</div>
-          <h2 className="font-display font-bold text-xl dark:text-zinc-100 light:text-zinc-900">
+          <h2 className="font-display font-bold text-xl text-zinc-900 dark:text-zinc-100">
             {passed ? 'Level Complete!' : 'Level Failed'}
           </h2>
           <div className="rounded-xl border p-4 space-y-2 text-left text-sm
-            dark:bg-zinc-800 dark:border-zinc-700 light:bg-amber-50 light:border-amber-200">
+            bg-amber-50 border-amber-200 dark:bg-zinc-800 dark:border-zinc-700">
             {[
               ['Correct', correct],
               ['Wrong', total - correct],
@@ -214,13 +217,13 @@ export default function GameScreen() {
               ['XP Earned', `${totalXP.toLocaleString()} total`],
             ].map(([l, v]) => (
               <div key={l} className="flex justify-between">
-                <span className="dark:text-zinc-400 light:text-zinc-500">{l}</span>
-                <span className="font-display font-bold dark:text-zinc-100 light:text-zinc-900">{v}</span>
+                <span className="text-zinc-500 dark:text-zinc-400">{l}</span>
+                <span className="font-display font-bold text-zinc-900 dark:text-zinc-100">{v}</span>
               </div>
             ))}
           </div>
           {!passed && (
-            <p className="text-xs dark:text-zinc-400 light:text-zinc-500">
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">
               Need ≥75% to unlock the next level. You got {Math.round((correct/total)*100)}%.
             </p>
           )}
@@ -242,8 +245,8 @@ export default function GameScreen() {
     <div className="modal-overlay">
       <div className="modal-box w-full max-w-sm text-center space-y-4">
         <div className="text-5xl">💀</div>
-        <h2 className="font-display font-bold text-2xl dark:text-zinc-100 light:text-zinc-900">Game Over</h2>
-        <p className="text-sm dark:text-zinc-400 light:text-zinc-500">
+        <h2 className="font-display font-bold text-2xl text-zinc-900 dark:text-zinc-100">Game Over</h2>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">
           You ran out of hearts on question {qIndex + 1} of {total}.
         </p>
         <div className="flex gap-2">
@@ -272,13 +275,13 @@ export default function GameScreen() {
         )}
 
         {/* Progress */}
-        <span className="text-xs font-display font-bold dark:text-zinc-400 light:text-zinc-500">
+        <span className="text-xs font-display font-bold text-zinc-500 dark:text-zinc-400">
           {qIndex + 1} / {total}
         </span>
       </div>
 
       {/* Timer bar */}
-      <div className="w-full dark:bg-zinc-800 light:bg-amber-100 rounded-full overflow-hidden h-2">
+      <div className="w-full bg-amber-100 dark:bg-zinc-800 rounded-full overflow-hidden h-2">
         <div
           className={`timer-bar ${isUrgent ? 'animate-pulse' : ''}`}
           style={{
@@ -290,10 +293,10 @@ export default function GameScreen() {
         />
       </div>
       <div className="flex justify-between text-xs font-display">
-        <span className={isUrgent ? 'text-red-400 font-bold' : 'dark:text-zinc-500 light:text-zinc-400'}>
+        <span className={isUrgent ? 'text-red-400 font-bold' : 'text-zinc-400 dark:text-zinc-500'}>
           {timeLeft}s
         </span>
-        <span className="dark:text-zinc-500 light:text-zinc-400">
+        <span className="text-zinc-400 dark:text-zinc-500">
           Level {level} · {accuracy}% acc
         </span>
       </div>
@@ -303,7 +306,7 @@ export default function GameScreen() {
         <p className="text-xs font-display font-semibold text-gold mb-3 uppercase tracking-wide">
           Q{qIndex + 1}
         </p>
-        <p className="font-body text-base sm:text-lg dark:text-zinc-100 light:text-zinc-900 leading-relaxed">
+        <p className="font-body text-base sm:text-lg text-zinc-900 dark:text-zinc-100 leading-relaxed">
           {currentQ.question}
         </p>
       </div>
@@ -353,7 +356,7 @@ export default function GameScreen() {
             disabled={!stagedOption}
             className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            🔒 Lock Answer
+            Lock Answer
             <span className="hidden sm:inline text-xs opacity-50 font-normal ml-2">(Enter)</span>
           </button>
         ) : (
@@ -380,23 +383,23 @@ export default function GameScreen() {
       {/* Explanation (shown after answering) */}
       {selected && (
         <div className="card p-4 text-sm font-body animate-slide-up
-          dark:bg-zinc-800/50 light:bg-amber-50">
-          <p className="font-display font-semibold text-xs mb-1 dark:text-zinc-400 light:text-zinc-500 uppercase tracking-wide">
+          bg-amber-50 dark:bg-zinc-800/50">
+          <p className="font-display font-semibold text-xs mb-1 text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">
             Explanation
           </p>
-          <p className="dark:text-zinc-300 light:text-zinc-600 leading-relaxed">
+          <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
             {currentQ.explanation}
           </p>
         </div>
       )}
 
       {/* Back button */}
-      <div className="pb-4 pt-4 border-t dark:border-zinc-800 light:border-amber-200">
+      <div className="pb-4 pt-4 border-t border-amber-200 dark:border-zinc-800">
         <button
           onClick={() => navigate('/game')}
-          className="text-xs dark:text-zinc-500 light:text-zinc-400 hover:text-gold transition-colors font-body"
+          className="text-xs text-zinc-400 dark:text-zinc-500 hover:text-gold transition-colors font-body"
         >
-          ← Back to Levels
+          Back to Levels
         </button>
       </div>
     </div>

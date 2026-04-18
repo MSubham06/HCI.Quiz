@@ -679,13 +679,13 @@ Students can install the platform on their home screen for a native-app feel:
 - [x] 📱 Fully responsive — mobile, tablet & desktop
 - [x] 📲 PWA Add to Home Screen meta tags
 - [x] ⌨️ Keyboard shortcuts (`1` `2` `3` `4`) for desktop users
-- [ ] 🏆 Local leaderboard — top 5 scores stored per device
-- [ ] 📚 Subject selector — swap between different NPTEL courses
-- [ ] 🔊 Sound effects — correct, wrong, fire streak, game over
-- [ ] 🎊 Confetti animation on level completion
-- [ ] 🌐 Full PWA with service worker (true offline mode)
-- [ ] 📤 Export results as shareable scorecard image
-- [ ] 📳 Haptic feedback on mobile (Vibration API)
+- [X] 🏆 Local leaderboard — top 5 scores stored per device
+- [X] 📚 Subject selector — swap between different NPTEL courses
+- [X] 🔊 Sound effects — correct, wrong, fire streak, game over
+- [X] 🎊 Confetti animation on level completion
+- [X] 🌐 Full PWA with service worker (true offline mode)
+- [X] 📤 Export results as shareable scorecard image
+- [X] 📳 Haptic feedback on mobile (Vibration API)
 
 ---
 
@@ -731,19 +731,19 @@ Contributions are welcome! Here's how:
 
 Run through this before every release:
 
-- [ ] Chrome DevTools — iPhone SE (375px width)
-- [ ] Chrome DevTools — iPhone 14 Pro (393px)
-- [ ] Chrome DevTools — iPad Air (820px)
-- [ ] Chrome DevTools — Desktop 1440px
-- [ ] Real Android device — Chrome browser
-- [ ] Real iPhone — Safari *(critical — iOS behaves differently from DevTools)*
-- [ ] Dark theme on all screen sizes above
-- [ ] Light theme on all screen sizes above
-- [ ] Appreciation popup appears correctly on first visit
-- [ ] "Thank You" click → popup never shown again after page reload
-- [ ] "✕" click → popup appears again on next visit
-- [ ] Congratulations panel triggers correctly in both Game and Practice Mode
-- [ ] Question selector row scrolls horizontally on mobile without clipping
+- [X] Chrome DevTools — iPhone SE (375px width)
+- [X] Chrome DevTools — iPad Air (820px)
+- [X] Chrome DevTools — Desktop 1440px
+- [X] Chrome DevTools — iPhone 14 Pro (393px)
+- [X] Real Android device — Chrome browser
+- [X] Real iPhone — Safari *(critical — iOS behaves differently from DevTools)*
+- [X] Dark theme on all screen sizes above
+- [X] Light theme on all screen sizes above
+- [X] Appreciation popup appears correctly on first visit
+- [X] "Thank You" click → popup never shown again after page reload
+- [X] "✕" click → popup appears again on next visit
+- [X] Congratulations panel triggers correctly in both Game and Practice Mode
+- [X] Question selector row scrolls horizontally on mobile without clipping
 
 ---
 
