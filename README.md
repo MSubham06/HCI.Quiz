@@ -16,7 +16,7 @@
 *React · Tailwind CSS · Vite · Zero Backend · 120 Questions · Three Modes*  
 *Fully responsive — study on your phone, tablet, or desktop. Anytime. Anywhere.*
 
-[🚀 Live Demo](#) · [📖 Documentation](#-table-of-contents) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues)
+[🚀 Live Demo](https://hci-quiz-lovat.vercel.app) · [📖 Documentation](#table-of-contents) · [🐛 Report Bug](issues) · [✨ Request Feature](issues)
 
 </div>
 
