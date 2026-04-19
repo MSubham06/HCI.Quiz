@@ -1,4 +1,4 @@
-# 🎮 HCI Quiz — Gamified Practice Platform
+# 🎮 HCI Quiz : Gamified Practice Platform
 
 <div align="center">
 
